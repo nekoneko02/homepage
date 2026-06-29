@@ -173,7 +173,8 @@ Amplify Console → App → **Environment variables** で設定します。
 
 | 変数 | 設定値 | 必須 |
 |---|---|---|
-| `ZENN_GH_REPO` | `neko_student/zenn` | ✅ |
+| `ZENN_GH_REPO` | `nekoneko02/zenn`（GitHub アカウント名/リポジトリ名） | ✅ |
+| `ZENN_USERNAME` | `neko_student`（Zenn の公開URLで使うユーザー名） | ✅ |
 | `NOTE_RSS_URL` | `https://note.com/alg_geo/rss` | ✅ |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | `G-XXXXXXXXXX` | ✅（本番） |
 | `GITHUB_TOKEN` | GitHub PAT（read:public_repo） | 推奨 |

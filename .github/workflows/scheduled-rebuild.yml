@@ -24,7 +24,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ZENN_GH_REPO: nekoneko02/zenn
-          NOTE_RSS_URL: https://note.com/nekoneko02/rss
+          ZENN_USERNAME: neko_student
+          NOTE_RSS_URL: https://note.com/alg_geo/rss
 
       - name: Trigger Amplify rebuild
         if: steps.diff.outputs.has_diff == 'true'

@@ -2,9 +2,10 @@ import matter from "gray-matter";
 import { categorize } from "../categorize";
 import type { ContentItem } from "../types";
 
-const REPO = process.env.ZENN_GH_REPO ?? "neko_student/zenn";
+// GitHub リポジトリ（nekoneko02/zenn）と Zenn 公開URL のユーザー名（neko_student）は別
+const REPO = process.env.ZENN_GH_REPO ?? "nekoneko02/zenn";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const ZENN_USERNAME = REPO.split("/")[0];
+const ZENN_USERNAME = process.env.ZENN_USERNAME ?? "neko_student";
 
 interface GitHubFile {
   name: string;
