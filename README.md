@@ -1,25 +1,76 @@
-## AWS Amplify Next.js (App Router) Starter Template
+# ねこエンジニアのホームページ！
 
-This repository provides a starter template for creating applications using Next.js (App Router) and AWS Amplify, emphasizing easy setup for authentication, API, and database capabilities.
+本リポジトリはねこエンジニアのホームページです。
 
-## Overview
+## 背景
 
-This template equips you with a foundational Next.js application integrated with AWS Amplify, streamlined for scalability and performance. It is ideal for developers looking to jumpstart their project with pre-configured AWS services like Cognito, AppSync, and DynamoDB.
+私（ペンネーム：ねこエンジニア）は、いくつかのプラットフォームで活動している。
 
-## Features
+- Zenn：技術ブログ
+- note：IT技術以外のブログ
+- Booth：技術同人誌の販売
+- Twitter：小さなアウトプット（つぶやき）
+- GitHub Pages：数学の本（同人誌）
+- その他：個人開発（プロダクト）のデプロイ先（AWS Amplifyなど）
 
-- **Authentication**: Setup with Amazon Cognito for secure user authentication.
-- **API**: Ready-to-use GraphQL endpoint with AWS AppSync.
-- **Database**: Real-time database powered by Amazon DynamoDB.
+上記の通り、コンテンツは増えてきている。また、プラットフォーム毎に役割分担が明確に分けられている。
 
-## Deploying to AWS
+一方で、コンテンツが分散しているのが課題で、Zennを見た→他のnoteなどへ遷移しにくい、ねこエンジニアが全体で何をやっているかわかりにくい、という課題である。
 
-For detailed instructions on deploying your application, refer to the [deployment section](https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/#deploy-a-fullstack-app-to-aws) of our documentation.
+## 目的
 
-## Security
+- ねこエンジニアとは、「こういう人物だ」ということがわかるページを作ること。
+- 各コンテンツのハブになり、例えば、Zenn→noteのようなプラットフォーム横断×ねこエンジニアをたどる、というユーザー体験を実現すること。
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+## 方針
 
-## License
+ホームページ本体は、コンテンツの中身は持たず、あくまでハブとする。
 
-This library is licensed under the MIT-0 License. See the LICENSE file.
+ねこエンジニアの経歴など、必要に応じて、ホームページに載せることは許容されるが、それらも必要最低限とする（ホームページは各プラットフォームへの導線であり、そのために必要な情報に絞る）。
+
+## ホームページのデザイン
+
+ここでは、ホームページのデザイン方針を記載する。
+
+### 要素
+
+- トップ：ヒーロー画像、ねこエンジニアの簡単なプロフィール
+- コンテンツ一覧
+  - zenn：RSS、もしくはGitHub（https://github.com/nekoneko02/zenn）から自動取得とする
+  - note：RSSから自動取得とする
+  - Booth：自動取得、もしくは手動更新とする。
+  - Twitter：公式ヴィジットを活用する。
+  - GitHub Pages：タグなどを活用して自動取得する。
+  - その他の個人開発（プロダクト）：手動更新とする。
+- コンテンツの絞り込み機能（カテゴリ）
+  - 領域：IT、数学、ボルダリング、プロダクト
+  - シリーズ：ゼロから
+  - 資格・勉強
+  - 単発コンテンツ
+  - 本
+  - など（可能な限り、自動でカテゴリ認識できるようにする）
+
+補足）基本方針
+
+ホームページは、できる限り更新しなくてよい設計とする。特に、コンテンツ一覧については、各プラットフォームを正とし、自動取得を原則とする。
+
+ただし、コンテンツ一覧（自動取得の方法）については、実装しやすさを優先して考える。ただし、非公式APIなどは、原則利用しないようにする（動作が不安定になるため）。
+
+なお、自動取得が難しく、更新頻度が限りなく低いもの（Boothなど）は、手動更新を許容する。
+
+### ページデザイン
+
+```
+header
+---
+トップ
+---
+[カテゴリ選択]
+|コンテンツ一覧|
+|--|
+|xxx|
+---
+Twitter
+---
+footer
+```
