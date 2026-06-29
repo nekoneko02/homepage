@@ -1,0 +1,34 @@
+name: Scheduled Rebuild
+
+on:
+  schedule:
+    - cron: "0 12 * * *" # 毎日 21:00 JST
+  workflow_dispatch: # 手動実行
+
+jobs:
+  check-and-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch latest content and check diff
+        id: diff
+        run: node scripts/check-content-diff.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ZENN_GH_REPO: nekoneko02/zenn
+          NOTE_RSS_URL: https://note.com/nekoneko02/rss
+
+      - name: Trigger Amplify rebuild
+        if: steps.diff.outputs.has_diff == 'true'
+        run: |
+          curl -X POST -d '{}' \
+            "${{ secrets.AMPLIFY_BUILD_WEBHOOK }}" \
+            -H "Content-Type: application/json"

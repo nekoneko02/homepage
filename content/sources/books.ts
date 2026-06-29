@@ -1,0 +1,34 @@
+import fs from "fs";
+import path from "path";
+import { categorize } from "../categorize";
+import type { ContentItem } from "../types";
+
+interface BookEntry {
+  title: string;
+  url: string;
+  publishedAt?: string;
+  tags?: string[];
+  thumbnail?: string;
+  excerpt?: string;
+}
+
+export function fetchBooks(): ContentItem[] {
+  const filePath = path.join(process.cwd(), "data", "books.json");
+  const raw: BookEntry[] = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+
+  return raw.map((entry, i) => {
+    const slug = entry.url.split("/").pop() ?? String(i);
+    const base: Omit<ContentItem, "category"> = {
+      id: `github-${slug}`,
+      platform: "github",
+      title: entry.title,
+      url: entry.url,
+      publishedAt: entry.publishedAt,
+      excerpt: entry.excerpt,
+      thumbnail: entry.thumbnail,
+      tags: entry.tags ?? ["数学", "本"],
+      source: "manual",
+    };
+    return categorize(base);
+  });
+}
