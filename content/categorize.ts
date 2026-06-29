@@ -6,24 +6,26 @@ import {
   typeRules,
 } from "./category-rules";
 
+const keywordSkipPlatforms: Platform[] = ["booth", "github"];
+
 function detectDomain(
   tags: string[],
   title: string,
   platform: Platform,
   zennType?: string
-): Domain {
-  if (platform === "zenn" && zennType === "tech") return "IT";
+): Domain[] {
+  if (platform === "zenn" && zennType === "tech") return ["IT"];
+  if (keywordSkipPlatforms.includes(platform)) return [domainDefaultByPlatform[platform]];
 
   const tagStr = tags.join(" ");
-  for (const { pattern, domain } of domainKeywords) {
-    if (pattern.test(tagStr)) return domain;
-  }
+  const matched = new Set<Domain>();
 
   for (const { pattern, domain } of domainKeywords) {
-    if (pattern.test(title)) return domain;
+    if (pattern.test(tagStr) || pattern.test(title)) matched.add(domain);
   }
 
-  return domainDefaultByPlatform[platform];
+  if (matched.size > 0) return Array.from(matched);
+  return [domainDefaultByPlatform[platform]];
 }
 
 function detectSeries(title: string): string | undefined {

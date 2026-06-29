@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { getAllContent } from "@/content";
 import { profile } from "@/data/profile";
 import Header from "./components/Header";
@@ -15,9 +14,7 @@ export default async function Home() {
       <Header links={profile.links} />
       <main>
         <Hero profile={profile} />
-        <Suspense>
-          <ContentSection items={contentItems} />
-        </Suspense>
+        <ContentSection items={contentItems} />
         <TwitterEmbed handle={profile.twitterHandle} />
       </main>
       <Footer links={profile.links} />

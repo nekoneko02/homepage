@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams, useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 import ContentCard from "./ContentCard";
 import type { ContentItem, Domain, Platform } from "@/content";
 
@@ -13,6 +13,8 @@ const domainOptions: DomainFilter[] = [
   "数学",
   "ボルダリング",
   "プロダクト",
+  "ブログ",
+  "本",
 ];
 const platformOptions: { value: PlatformFilter; label: string }[] = [
   { value: "すべて", label: "すべて" },
@@ -27,27 +29,34 @@ interface Props {
 }
 
 export default function ContentSection({ items }: Props) {
-  const searchParams = useSearchParams();
-  const router = useRouter();
+  const [domain, setDomain] = useState<DomainFilter>("すべて");
+  const [platform, setPlatform] = useState<PlatformFilter>("すべて");
 
-  const domain = (searchParams.get("domain") ?? "すべて") as DomainFilter;
-  const platform = (searchParams.get("platform") ?? "すべて") as PlatformFilter;
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const d = params.get("domain") as DomainFilter;
+    const p = params.get("platform") as PlatformFilter;
+    if (d && (domainOptions as string[]).includes(d)) setDomain(d);
+    if (p && platformOptions.some((o) => o.value === p)) setPlatform(p);
+  }, []);
 
   const filtered = items.filter((item) => {
-    const domainMatch = domain === "すべて" || item.category.domain === domain;
+    const domainMatch = domain === "すべて" || item.category.domain.includes(domain);
     const platformMatch = platform === "すべて" || item.platform === platform;
     return domainMatch && platformMatch;
   });
 
-  function setFilter(key: string, value: string) {
-    const params = new URLSearchParams(searchParams.toString());
+  function setFilter(key: "domain" | "platform", value: string) {
+    if (key === "domain") setDomain(value as DomainFilter);
+    if (key === "platform") setPlatform(value as PlatformFilter);
+    const params = new URLSearchParams(window.location.search);
     if (value === "すべて") {
       params.delete(key);
     } else {
       params.set(key, value);
     }
     const qs = params.toString();
-    router.replace(qs ? `?${qs}` : "/", { scroll: false });
+    window.history.replaceState(null, "", qs ? `?${qs}` : window.location.pathname);
   }
 
   const chipBase: React.CSSProperties = {

@@ -22,8 +22,8 @@ export const domainKeywords: { pattern: RegExp; domain: Domain }[] = [
 
 export const domainDefaultByPlatform: Record<Platform, Domain> = {
   zenn: "IT",
-  note: "IT",
-  booth: "IT",
+  note: "ブログ",
+  booth: "本",
   github: "数学",
   product: "プロダクト",
 };

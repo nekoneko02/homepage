@@ -9,7 +9,9 @@
     "tags": [],
     "source": "auto",
     "category": {
-      "domain": "ボルダリング",
+      "domain": [
+        "ボルダリング"
+      ],
       "type": "単発"
     }
   },
@@ -23,7 +25,9 @@
     "tags": [],
     "source": "auto",
     "category": {
-      "domain": "IT",
+      "domain": [
+        "ブログ"
+      ],
       "type": "単発"
     }
   },
@@ -37,7 +41,9 @@
     "tags": [],
     "source": "auto",
     "category": {
-      "domain": "IT",
+      "domain": [
+        "ブログ"
+      ],
       "type": "単発"
     }
   },
@@ -51,7 +57,9 @@
     "tags": [],
     "source": "auto",
     "category": {
-      "domain": "IT",
+      "domain": [
+        "ブログ"
+      ],
       "type": "単発"
     }
   },
@@ -65,7 +73,9 @@
     "tags": [],
     "source": "auto",
     "category": {
-      "domain": "数学",
+      "domain": [
+        "数学"
+      ],
       "type": "単発"
     }
   },
@@ -79,7 +89,9 @@
     "tags": [],
     "source": "auto",
     "category": {
-      "domain": "数学",
+      "domain": [
+        "数学"
+      ],
       "type": "単発"
     }
   },
@@ -93,7 +105,9 @@
     "tags": [],
     "source": "auto",
     "category": {
-      "domain": "数学",
+      "domain": [
+        "数学"
+      ],
       "type": "単発"
     }
   }

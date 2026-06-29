@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Script from "next/script";
 
 interface Props {
@@ -7,6 +8,15 @@ interface Props {
 }
 
 export default function TwitterEmbed({ handle }: Props) {
+  useEffect(() => {
+    // スクリプトがすでにロード済みの場合にウィジェットを初期化する
+    // @ts-ignore
+    if (window.twttr?.widgets) {
+      // @ts-ignore
+      window.twttr.widgets.load();
+    }
+  }, []);
+
   return (
     <section
       style={{
@@ -62,11 +72,10 @@ export default function TwitterEmbed({ handle }: Props) {
         </div>
       </div>
 
-      {/* widgets.js ロード後に手動で初期化して確実にレンダリングさせる */}
       <Script
         src="https://platform.twitter.com/widgets.js"
-        strategy="lazyOnload"
-        onLoad={() => {
+        strategy="afterInteractive"
+        onReady={() => {
           // @ts-ignore
           window.twttr?.widgets?.load();
         }}

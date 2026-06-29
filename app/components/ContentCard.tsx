@@ -21,14 +21,16 @@ const domainTag: Record<Domain, { bg: string; color: string }> = {
   数学: { bg: "#dcfce7", color: "#15803d" },
   ボルダリング: { bg: "#ffedd5", color: "#c2410c" },
   プロダクト: { bg: "#ede9fe", color: "#6d28d9" },
+  ブログ: { bg: "#fce7f3", color: "#9d174d" },
+  本: { bg: "#fef9c3", color: "#854d0e" },
 };
 
-const thumbnailGradient = (platform: Platform, domain: Domain): string => {
+const thumbnailGradient = (platform: Platform, domains: Domain[]): string => {
   if (platform === "booth") return "linear-gradient(135deg, #ffd6d6, #ffa0a0)";
   if (platform === "github") return "linear-gradient(135deg, #dce8ff, #aec4f0)";
   if (platform === "product") return "linear-gradient(135deg, #ede9fe, #c0b0f0)";
-  if (domain === "ボルダリング") return "linear-gradient(135deg, #ffe0c4, #ffbc8a)";
-  if (domain === "数学") return "linear-gradient(135deg, #e4deff, #c0b0f0)";
+  if (domains.includes("ボルダリング")) return "linear-gradient(135deg, #ffe0c4, #ffbc8a)";
+  if (domains.includes("数学")) return "linear-gradient(135deg, #e4deff, #c0b0f0)";
   return "linear-gradient(135deg, #b2f0ea, #6fcfc7)";
 };
 
@@ -52,7 +54,6 @@ interface Props {
 
 export default function ContentCard({ item }: Props) {
   const badge = platformBadge[item.platform];
-  const tag = domainTag[item.category.domain];
   const gradient = thumbnailGradient(item.platform, item.category.domain);
 
   return (
@@ -131,19 +132,27 @@ export default function ContentCard({ item }: Props) {
 
       {/* Content */}
       <div style={{ padding: "12px 14px" }}>
-        {/* Category tag */}
-        <span
-          style={{
-            padding: "2px 7px",
-            borderRadius: 5,
-            fontSize: 10,
-            fontWeight: 600,
-            backgroundColor: tag.bg,
-            color: tag.color,
-          }}
-        >
-          {item.category.domain}
-        </span>
+        {/* Category tags */}
+        <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+          {item.category.domain.map((d) => {
+            const tag = domainTag[d];
+            return (
+              <span
+                key={d}
+                style={{
+                  padding: "2px 7px",
+                  borderRadius: 5,
+                  fontSize: 10,
+                  fontWeight: 600,
+                  backgroundColor: tag.bg,
+                  color: tag.color,
+                }}
+              >
+                {d}
+              </span>
+            );
+          })}
+        </div>
 
         {/* Title */}
         <p
