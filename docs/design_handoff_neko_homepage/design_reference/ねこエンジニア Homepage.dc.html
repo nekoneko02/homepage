@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Noto Sans JP', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  </style>
+</helmet>
+
+<!-- ═══════════════════════════════════════════════════
+     VARIATION A  ミント × ミニマル
+═══════════════════════════════════════════════════ -->
+<div style="position:absolute;left:80px;top:80px;width:1000px;">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;font:600 11px/1 system-ui;color:rgba(0,0,0,.42);letter-spacing:.06em;text-transform:uppercase;">Variation A — ミント × ミニマル</div>
+  <div style="border-radius:4px;box-shadow:0 2px 24px rgba(0,0,0,.1);overflow:hidden;background:#fff;">
+
+    <!-- Header A -->
+    <header style="display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:62px;background:#fff;border-bottom:1.5px solid #e4efed;">
+      <div style="display:flex;align-items:center;gap:9px;font-family:'M PLUS Rounded 1c',system-ui;font-size:18px;font-weight:800;color:#0fa89b;">
+        <span style="font-size:21px;">🐱</span>
+        <span>ねこエンジニア</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:6px;">
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:#e5f7f5;color:#0fa89b;">Zenn</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:#f2f2f2;color:#444;">note</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:#fde8e8;color:#e05252;">Booth</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:#f0f0f0;color:#555;">GitHub</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:#e8f4ff;color:#1a8cdf;">Twitter</a>
+      </nav>
+    </header>
+
+    <!-- Hero A -->
+    <section style="background:linear-gradient(140deg,#d4f4ee 0%,#e8fffe 55%,#f4fffd 100%);padding:52px 40px 56px;">
+      <div style="display:flex;align-items:center;gap:40px;">
+        <div style="flex:1;">
+          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(15,168,155,.12);color:#0c8a80;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;margin-bottom:18px;">
+            <span>🐾</span><span>エンジニア × 数学 × ボルダリング</span>
+          </div>
+          <h1 style="font-family:'M PLUS Rounded 1c',system-ui;font-size:36px;font-weight:800;color:#0d1f2d;line-height:1.4;margin:0 0 14px;letter-spacing:-.01em;">ITと数学と<br>ボルダリングが<br>好きなエンジニア</h1>
+          <p style="font-size:14px;color:#4e6570;line-height:1.8;margin:0 0 22px;max-width:380px;">Zenn・note・同人誌・個人プロダクトで情報発信中。技術から趣味まで気になることを書いています。</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;">
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:#dbeafe;color:#1d4ed8;">💻 IT</span>
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:#dcfce7;color:#15803d;">📐 数学</span>
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:#ffedd5;color:#c2410c;">🧗 ボルダリング</span>
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:#ede9fe;color:#6d28d9;">🚀 プロダクト</span>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:24px;background:#0fa89b;color:white;font-size:13px;font-weight:600;text-decoration:none;">📝 Zennを読む</a>
+            <a style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:24px;background:rgba(255,255,255,.85);color:#0d1f2d;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid rgba(15,168,155,.3);">🛒 同人誌を見る</a>
+          </div>
+        </div>
+        <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;">
+          <div style="width:164px;height:164px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;font-size:72px;box-shadow:0 6px 32px rgba(15,168,155,.2);border:3px solid rgba(15,168,155,.18);">🐱</div>
+          <div style="text-align:center;">
+            <div style="font-family:'M PLUS Rounded 1c',system-ui;font-size:15px;font-weight:700;color:#0d1f2d;">ねこエンジニア</div>
+            <div style="font-size:12px;color:#6b8090;margin-top:3px;">@neko_engineer_</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content A -->
+    <section style="background:#f4f9f8;padding:36px 40px 44px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;">
+        <h2 style="font-family:'M PLUS Rounded 1c',system-ui;font-size:20px;font-weight:700;color:#0d1f2d;margin:0;">コンテンツ一覧</h2>
+        <span style="font-size:12px;color:#7a909a;">全 28 件</span>
+      </div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;align-items:center;">
+        <span style="font-size:11px;color:#7a8e98;font-weight:500;padding-right:4px;">領域</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;background:#0fa89b;color:white;cursor:pointer;">すべて</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#5a6a7a;border:1px solid #cce0dc;cursor:pointer;">IT</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#5a6a7a;border:1px solid #cce0dc;cursor:pointer;">数学</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#5a6a7a;border:1px solid #cce0dc;cursor:pointer;">ボルダリング</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#5a6a7a;border:1px solid #cce0dc;cursor:pointer;">プロダクト</span>
+      </div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:28px;align-items:center;">
+        <span style="font-size:11px;color:#7a8e98;font-weight:500;padding-right:4px;">プラットフォーム</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#5a6a7a;border:1px solid #cce0dc;cursor:pointer;">Zenn</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#5a6a7a;border:1px solid #cce0dc;cursor:pointer;">note</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#5a6a7a;border:1px solid #cce0dc;cursor:pointer;">Booth</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#5a6a7a;border:1px solid #cce0dc;cursor:pointer;">GitHub</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #d4e4e0;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#b2f0ea,#6fcfc7);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">💻</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#0fa89b;color:white;">Zenn</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dbeafe;color:#1d4ed8;">IT</span>
+            <p style="font-size:13px;font-weight:600;color:#0d1f2d;margin:7px 0 5px;line-height:1.5;">TypeScriptで型安全なAPIクライアントを作る</p>
+            <p style="font-size:11px;color:#6b8090;margin:0 0 7px;line-height:1.5;">zodとfetchを組み合わせた実装パターン。</p>
+            <span style="font-size:11px;color:#9aadb6;">2024.01.15</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #d4e4e0;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#c7e8f8,#8ec8e8);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">☁️</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#0fa89b;color:white;">Zenn</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dbeafe;color:#1d4ed8;">IT</span>
+            <p style="font-size:13px;font-weight:600;color:#0d1f2d;margin:7px 0 5px;line-height:1.5;">AWS Lambdaのコールドスタートを最小化する</p>
+            <p style="font-size:11px;color:#6b8090;margin:0 0 7px;line-height:1.5;">実測データをもとに最適な設定を解説。</p>
+            <span style="font-size:11px;color:#9aadb6;">2024.01.08</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #d4e4e0;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#ffe0c4,#ffbc8a);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">🧗</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:rgba(0,0,0,.6);color:white;">note</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#ffedd5;color:#c2410c;">ボルダリング</span>
+            <p style="font-size:13px;font-weight:600;color:#0d1f2d;margin:7px 0 5px;line-height:1.5;">ボルダリング初心者がV4を登れるようになった話</p>
+            <p style="font-size:11px;color:#6b8090;margin:0 0 7px;line-height:1.5;">半年間の練習記録と気づきをまとめました。</p>
+            <span style="font-size:11px;color:#9aadb6;">2024.01.05</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #d4e4e0;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#e4deff,#c0b0f0);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">📐</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:rgba(0,0,0,.6);color:white;">note</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dcfce7;color:#15803d;">数学</span>
+            <p style="font-size:13px;font-weight:600;color:#0d1f2d;margin:7px 0 5px;line-height:1.5;">数学の美しさについて考えてみた</p>
+            <p style="font-size:11px;color:#6b8090;margin:0 0 7px;line-height:1.5;">抽象と具体の間にある美を言語化する試み。</p>
+            <span style="font-size:11px;color:#9aadb6;">2023.12.28</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #d4e4e0;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#ffd6d6,#ffa0a0);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">📖</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#e05252;color:white;">Booth</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dcfce7;color:#15803d;">数学</span>
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#f3f4f6;color:#374151;margin-left:4px;">本</span>
+            <p style="font-size:13px;font-weight:600;color:#0d1f2d;margin:7px 0 5px;line-height:1.5;">ゼロから学ぶ線形代数 第2版</p>
+            <p style="font-size:11px;color:#6b8090;margin:0 0 7px;line-height:1.5;">独学者向けに丁寧に書いた数学同人誌。</p>
+            <span style="font-size:11px;color:#9aadb6;">2023.12.01</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #d4e4e0;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#dce8ff,#aec4f0);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">🔢</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#1e293b;color:white;">GitHub</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dcfce7;color:#15803d;">数学</span>
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#f3f4f6;color:#374151;margin-left:4px;">本</span>
+            <p style="font-size:13px;font-weight:600;color:#0d1f2d;margin:7px 0 5px;line-height:1.5;">確率論入門 — 測度論から確率へ</p>
+            <p style="font-size:11px;color:#6b8090;margin:0 0 7px;line-height:1.5;">GitHub Pagesで公開中の数学テキスト。</p>
+            <span style="font-size:11px;color:#9aadb6;">2023.11.15</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Twitter A -->
+    <section style="background:#fff;padding:36px 40px;border-top:1px solid #e4efed;">
+      <h2 style="font-family:'M PLUS Rounded 1c',system-ui;font-size:20px;font-weight:700;color:#0d1f2d;margin:0 0 5px;text-align:center;">つぶやき</h2>
+      <p style="font-size:12px;color:#6b8090;text-align:center;margin:0 0 18px;">@neko_engineer_</p>
+      <div style="max-width:460px;margin:0 auto;border:1.5px solid #d4e4e0;border-radius:14px;overflow:hidden;">
+        <div style="background:#f4f9f8;padding:12px 18px;border-bottom:1px solid #d4e4e0;display:flex;align-items:center;gap:8px;">
+          <span style="font-size:15px;">🐱</span>
+          <span style="font-size:13px;font-weight:600;color:#0d1f2d;font-family:'M PLUS Rounded 1c',system-ui;">ねこエンジニア</span>
+          <span style="font-size:12px;color:#7a909a;">@neko_engineer_</span>
+        </div>
+        <div style="padding:14px 18px;display:flex;flex-direction:column;gap:11px;">
+          <div style="padding-bottom:11px;border-bottom:1px solid #eef4f2;">
+            <p style="font-size:13px;color:#1a2a34;margin:0 0 5px;line-height:1.6;">TypeScriptの型システムはほんと奥が深い。今日もまた新しい発見があった🐾</p>
+            <span style="font-size:11px;color:#9aadb6;">Jan 15, 2024</span>
+          </div>
+          <div>
+            <p style="font-size:13px;color:#1a2a34;margin:0 0 5px;line-height:1.6;">週末のボルダリング、ついにV4を完登できた！嬉しすぎる🧗✨</p>
+            <span style="font-size:11px;color:#9aadb6;">Jan 13, 2024</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer A -->
+    <footer style="background:#0c1e2a;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-family:'M PLUS Rounded 1c',system-ui;font-size:15px;font-weight:700;color:white;display:flex;align-items:center;gap:7px;margin-bottom:5px;"><span>🐱</span><span>ねこエンジニア</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.38);">© 2024 ねこエンジニア</div>
+      </div>
+      <div style="display:flex;gap:16px;">
+        <a style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">Zenn</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">note</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">Booth</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">GitHub</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">Twitter</a>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<!-- annotation A -->
+<div style="position:absolute;left:80px;top:1548px;width:280px;background:#fef9c3;padding:12px 15px;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.1);transform:rotate(-1deg);font-size:11px;line-height:1.65;color:#4a3e08;">
+  <strong>A — ミント × ミニマル</strong><br>
+  Zennのグリーンを連想させる清潔感。技術者らしい誠実さと信頼感が出る。既存プラットフォームとの親和性◎
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     VARIATION B  アンバー × 温かみ
+═══════════════════════════════════════════════════ -->
+<div style="position:absolute;left:1160px;top:80px;width:1000px;">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;font:600 11px/1 system-ui;color:rgba(0,0,0,.42);letter-spacing:.06em;text-transform:uppercase;">Variation B — アンバー × 温かみ</div>
+  <div style="border-radius:4px;box-shadow:0 2px 24px rgba(0,0,0,.1);overflow:hidden;background:#fffcf8;">
+
+    <!-- Header B -->
+    <header style="display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:62px;background:#fffcf8;border-bottom:1.5px solid #ecddd0;">
+      <div style="display:flex;align-items:center;gap:9px;font-family:'M PLUS Rounded 1c',system-ui;font-size:18px;font-weight:800;color:#c96026;">
+        <span style="font-size:21px;">🐱</span>
+        <span>ねこエンジニア</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:6px;">
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:#e5f7f5;color:#0fa89b;">Zenn</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:#f2f0ee;color:#554030;">note</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:#fde8e8;color:#e05252;">Booth</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:#f0ede8;color:#555;">GitHub</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:#e8f4ff;color:#1a8cdf;">Twitter</a>
+      </nav>
+    </header>
+
+    <!-- Hero B -->
+    <section style="background:linear-gradient(140deg,#ffecd8 0%,#fff7ee 55%,#fffdf8 100%);padding:52px 40px 56px;">
+      <div style="display:flex;align-items:center;gap:40px;">
+        <div style="flex:1;">
+          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(201,96,38,.1);color:#a04e18;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;margin-bottom:18px;">
+            <span>🐾</span><span>エンジニア × 数学 × ボルダリング</span>
+          </div>
+          <h1 style="font-family:'M PLUS Rounded 1c',system-ui;font-size:36px;font-weight:800;color:#1e0d04;line-height:1.4;margin:0 0 14px;letter-spacing:-.01em;">ITと数学と<br>ボルダリングが<br>好きなエンジニア</h1>
+          <p style="font-size:14px;color:#5e4030;line-height:1.8;margin:0 0 22px;max-width:380px;">Zenn・note・同人誌・個人プロダクトで情報発信中。技術から趣味まで気になることを書いています。</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;">
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:#dbeafe;color:#1d4ed8;">💻 IT</span>
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:#dcfce7;color:#15803d;">📐 数学</span>
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:#ffedd5;color:#c2410c;">🧗 ボルダリング</span>
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:#ede9fe;color:#6d28d9;">🚀 プロダクト</span>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:24px;background:#c96026;color:white;font-size:13px;font-weight:600;text-decoration:none;">📝 Zennを読む</a>
+            <a style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:24px;background:rgba(255,255,255,.85);color:#1e0d04;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid rgba(201,96,38,.28);">🛒 同人誌を見る</a>
+          </div>
+        </div>
+        <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;">
+          <div style="width:164px;height:164px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;font-size:72px;box-shadow:0 6px 32px rgba(201,96,38,.18);border:3px solid rgba(201,96,38,.18);">🐱</div>
+          <div style="text-align:center;">
+            <div style="font-family:'M PLUS Rounded 1c',system-ui;font-size:15px;font-weight:700;color:#1e0d04;">ねこエンジニア</div>
+            <div style="font-size:12px;color:#7a6050;margin-top:3px;">@neko_engineer_</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content B -->
+    <section style="background:#fff8f3;padding:36px 40px 44px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;">
+        <h2 style="font-family:'M PLUS Rounded 1c',system-ui;font-size:20px;font-weight:700;color:#1e0d04;margin:0;">コンテンツ一覧</h2>
+        <span style="font-size:12px;color:#8a7060;">全 28 件</span>
+      </div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;align-items:center;">
+        <span style="font-size:11px;color:#8a7060;font-weight:500;padding-right:4px;">領域</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;background:#c96026;color:white;cursor:pointer;">すべて</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#6a5040;border:1px solid #dfc8b4;cursor:pointer;">IT</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#6a5040;border:1px solid #dfc8b4;cursor:pointer;">数学</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#6a5040;border:1px solid #dfc8b4;cursor:pointer;">ボルダリング</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#6a5040;border:1px solid #dfc8b4;cursor:pointer;">プロダクト</span>
+      </div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:28px;align-items:center;">
+        <span style="font-size:11px;color:#8a7060;font-weight:500;padding-right:4px;">プラットフォーム</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#6a5040;border:1px solid #dfc8b4;cursor:pointer;">Zenn</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#6a5040;border:1px solid #dfc8b4;cursor:pointer;">note</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#6a5040;border:1px solid #dfc8b4;cursor:pointer;">Booth</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#6a5040;border:1px solid #dfc8b4;cursor:pointer;">GitHub</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #e8d8c8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#b2f0ea,#6fcfc7);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">💻</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#0fa89b;color:white;">Zenn</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dbeafe;color:#1d4ed8;">IT</span>
+            <p style="font-size:13px;font-weight:600;color:#1e0d04;margin:7px 0 5px;line-height:1.5;">TypeScriptで型安全なAPIクライアントを作る</p>
+            <p style="font-size:11px;color:#7a6050;margin:0 0 7px;line-height:1.5;">zodとfetchを組み合わせた実装パターン。</p>
+            <span style="font-size:11px;color:#b09888;">2024.01.15</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #e8d8c8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#c7e8f8,#8ec8e8);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">☁️</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#0fa89b;color:white;">Zenn</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dbeafe;color:#1d4ed8;">IT</span>
+            <p style="font-size:13px;font-weight:600;color:#1e0d04;margin:7px 0 5px;line-height:1.5;">AWS Lambdaのコールドスタートを最小化する</p>
+            <p style="font-size:11px;color:#7a6050;margin:0 0 7px;line-height:1.5;">実測データをもとに最適な設定を解説。</p>
+            <span style="font-size:11px;color:#b09888;">2024.01.08</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #e8d8c8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#ffe0c4,#ffbc8a);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">🧗</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:rgba(0,0,0,.6);color:white;">note</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#ffedd5;color:#c2410c;">ボルダリング</span>
+            <p style="font-size:13px;font-weight:600;color:#1e0d04;margin:7px 0 5px;line-height:1.5;">ボルダリング初心者がV4を登れるようになった話</p>
+            <p style="font-size:11px;color:#7a6050;margin:0 0 7px;line-height:1.5;">半年間の練習記録と気づきをまとめました。</p>
+            <span style="font-size:11px;color:#b09888;">2024.01.05</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #e8d8c8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#e4deff,#c0b0f0);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">📐</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:rgba(0,0,0,.6);color:white;">note</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dcfce7;color:#15803d;">数学</span>
+            <p style="font-size:13px;font-weight:600;color:#1e0d04;margin:7px 0 5px;line-height:1.5;">数学の美しさについて考えてみた</p>
+            <p style="font-size:11px;color:#7a6050;margin:0 0 7px;line-height:1.5;">抽象と具体の間にある美を言語化する試み。</p>
+            <span style="font-size:11px;color:#b09888;">2023.12.28</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #e8d8c8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#ffd6d6,#ffa0a0);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">📖</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#e05252;color:white;">Booth</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dcfce7;color:#15803d;">数学</span>
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#f3f4f6;color:#374151;margin-left:4px;">本</span>
+            <p style="font-size:13px;font-weight:600;color:#1e0d04;margin:7px 0 5px;line-height:1.5;">ゼロから学ぶ線形代数 第2版</p>
+            <p style="font-size:11px;color:#7a6050;margin:0 0 7px;line-height:1.5;">独学者向けに丁寧に書いた数学同人誌。</p>
+            <span style="font-size:11px;color:#b09888;">2023.12.01</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #e8d8c8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#dce8ff,#aec4f0);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">🔢</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#1e293b;color:white;">GitHub</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dcfce7;color:#15803d;">数学</span>
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#f3f4f6;color:#374151;margin-left:4px;">本</span>
+            <p style="font-size:13px;font-weight:600;color:#1e0d04;margin:7px 0 5px;line-height:1.5;">確率論入門 — 測度論から確率へ</p>
+            <p style="font-size:11px;color:#7a6050;margin:0 0 7px;line-height:1.5;">GitHub Pagesで公開中の数学テキスト。</p>
+            <span style="font-size:11px;color:#b09888;">2023.11.15</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Twitter B -->
+    <section style="background:#fffcf8;padding:36px 40px;border-top:1px solid #ecddd0;">
+      <h2 style="font-family:'M PLUS Rounded 1c',system-ui;font-size:20px;font-weight:700;color:#1e0d04;margin:0 0 5px;text-align:center;">つぶやき</h2>
+      <p style="font-size:12px;color:#7a6050;text-align:center;margin:0 0 18px;">@neko_engineer_</p>
+      <div style="max-width:460px;margin:0 auto;border:1.5px solid #e8d8c8;border-radius:14px;overflow:hidden;">
+        <div style="background:#fff8f3;padding:12px 18px;border-bottom:1px solid #e8d8c8;display:flex;align-items:center;gap:8px;">
+          <span style="font-size:15px;">🐱</span>
+          <span style="font-size:13px;font-weight:600;color:#1e0d04;font-family:'M PLUS Rounded 1c',system-ui;">ねこエンジニア</span>
+          <span style="font-size:12px;color:#8a7060;">@neko_engineer_</span>
+        </div>
+        <div style="padding:14px 18px;display:flex;flex-direction:column;gap:11px;">
+          <div style="padding-bottom:11px;border-bottom:1px solid #f2e8e0;">
+            <p style="font-size:13px;color:#2a1808;margin:0 0 5px;line-height:1.6;">TypeScriptの型システムはほんと奥が深い。今日もまた新しい発見があった🐾</p>
+            <span style="font-size:11px;color:#b09888;">Jan 15, 2024</span>
+          </div>
+          <div>
+            <p style="font-size:13px;color:#2a1808;margin:0 0 5px;line-height:1.6;">週末のボルダリング、ついにV4を完登できた！嬉しすぎる🧗✨</p>
+            <span style="font-size:11px;color:#b09888;">Jan 13, 2024</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer B -->
+    <footer style="background:#1a0e06;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-family:'M PLUS Rounded 1c',system-ui;font-size:15px;font-weight:700;color:white;display:flex;align-items:center;gap:7px;margin-bottom:5px;"><span>🐱</span><span>ねこエンジニア</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.38);">© 2024 ねこエンジニア</div>
+      </div>
+      <div style="display:flex;gap:16px;">
+        <a style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">Zenn</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">note</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">Booth</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">GitHub</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">Twitter</a>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<!-- annotation B -->
+<div style="position:absolute;left:1160px;top:1548px;width:280px;background:#fef9c3;padding:12px 15px;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.1);transform:rotate(.8deg);font-size:11px;line-height:1.65;color:#4a3e08;">
+  <strong>B — アンバー × 温かみ</strong><br>
+  生姜猫を連想させる琥珀色。個人サイトらしい手触り感と親しみやすさ。ボルダリング・数学ユーザーに◎
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     VARIATION C  ラベンダー × エディトリアル
+═══════════════════════════════════════════════════ -->
+<div style="position:absolute;left:2240px;top:80px;width:1000px;">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;font:600 11px/1 system-ui;color:rgba(0,0,0,.42);letter-spacing:.06em;text-transform:uppercase;">Variation C — ラベンダー × エディトリアル</div>
+  <div style="border-radius:4px;box-shadow:0 2px 24px rgba(0,0,0,.1);overflow:hidden;background:#fff;">
+
+    <!-- Header C (dark, part of hero) -->
+    <header style="display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:62px;background:#1a1033;border-bottom:1px solid rgba(255,255,255,.08);">
+      <div style="display:flex;align-items:center;gap:9px;font-family:'M PLUS Rounded 1c',system-ui;font-size:18px;font-weight:800;color:#c8b8ff;">
+        <span style="font-size:21px;">🐱</span>
+        <span>ねこエンジニア</span>
+      </div>
+      <nav style="display:flex;align-items:center;gap:6px;">
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:rgba(15,168,155,.22);color:#6ee8df;">Zenn</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);">note</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:rgba(229,82,82,.22);color:#ff9090;">Booth</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">GitHub</a>
+        <a style="padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;text-decoration:none;background:rgba(29,161,242,.22);color:#8ed4ff;">Twitter</a>
+      </nav>
+    </header>
+
+    <!-- Hero C (dark) -->
+    <section style="background:#1a1033;padding:52px 40px 56px;">
+      <div style="display:flex;align-items:center;gap:40px;">
+        <div style="flex:1;">
+          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(200,184,255,.14);color:#c8b8ff;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;margin-bottom:18px;">
+            <span>🐾</span><span>エンジニア × 数学 × ボルダリング</span>
+          </div>
+          <h1 style="font-family:'M PLUS Rounded 1c',system-ui;font-size:36px;font-weight:800;color:white;line-height:1.4;margin:0 0 14px;letter-spacing:-.01em;">ITと数学と<br>ボルダリングが<br>好きなエンジニア</h1>
+          <p style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.8;margin:0 0 22px;max-width:380px;">Zenn・note・同人誌・個人プロダクトで情報発信中。技術から趣味まで気になることを書いています。</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;">
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:rgba(219,234,254,.15);color:#93c5fd;">💻 IT</span>
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:rgba(220,252,231,.15);color:#86efac;">📐 数学</span>
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:rgba(255,237,213,.15);color:#fdba74;">🧗 ボルダリング</span>
+            <span style="padding:4px 12px;border-radius:14px;font-size:11px;font-weight:600;background:rgba(237,233,254,.15);color:#c4b5fd;">🚀 プロダクト</span>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:24px;background:#7c5ce5;color:white;font-size:13px;font-weight:600;text-decoration:none;">📝 Zennを読む</a>
+            <a style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:24px;background:transparent;color:white;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);">🛒 同人誌を見る</a>
+          </div>
+        </div>
+        <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;">
+          <div style="width:164px;height:164px;border-radius:50%;background:rgba(124,92,229,.2);display:flex;align-items:center;justify-content:center;font-size:72px;box-shadow:0 0 40px rgba(124,92,229,.4);border:3px solid rgba(200,184,255,.3);">🐱</div>
+          <div style="text-align:center;">
+            <div style="font-family:'M PLUS Rounded 1c',system-ui;font-size:15px;font-weight:700;color:white;">ねこエンジニア</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">@neko_engineer_</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content C -->
+    <section style="background:#f5f3ff;padding:36px 40px 44px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;">
+        <h2 style="font-family:'M PLUS Rounded 1c',system-ui;font-size:20px;font-weight:700;color:#18103a;margin:0;">コンテンツ一覧</h2>
+        <span style="font-size:12px;color:#7a6ea8;">全 28 件</span>
+      </div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;align-items:center;">
+        <span style="font-size:11px;color:#7a6ea8;font-weight:500;padding-right:4px;">領域</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;background:#7c5ce5;color:white;cursor:pointer;">すべて</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#5a4a88;border:1px solid #d8d0f0;cursor:pointer;">IT</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#5a4a88;border:1px solid #d8d0f0;cursor:pointer;">数学</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#5a4a88;border:1px solid #d8d0f0;cursor:pointer;">ボルダリング</span>
+        <span style="padding:5px 14px;border-radius:20px;font-size:12px;background:white;color:#5a4a88;border:1px solid #d8d0f0;cursor:pointer;">プロダクト</span>
+      </div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:28px;align-items:center;">
+        <span style="font-size:11px;color:#7a6ea8;font-weight:500;padding-right:4px;">プラットフォーム</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#5a4a88;border:1px solid #d8d0f0;cursor:pointer;">Zenn</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#5a4a88;border:1px solid #d8d0f0;cursor:pointer;">note</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#5a4a88;border:1px solid #d8d0f0;cursor:pointer;">Booth</span>
+        <span style="padding:4px 12px;border-radius:20px;font-size:11px;background:white;color:#5a4a88;border:1px solid #d8d0f0;cursor:pointer;">GitHub</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #dcd4f8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#b2f0ea,#6fcfc7);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">💻</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#0fa89b;color:white;">Zenn</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dbeafe;color:#1d4ed8;">IT</span>
+            <p style="font-size:13px;font-weight:600;color:#18103a;margin:7px 0 5px;line-height:1.5;">TypeScriptで型安全なAPIクライアントを作る</p>
+            <p style="font-size:11px;color:#6a5e98;margin:0 0 7px;line-height:1.5;">zodとfetchを組み合わせた実装パターン。</p>
+            <span style="font-size:11px;color:#9a8ec8;">2024.01.15</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #dcd4f8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#c7e8f8,#8ec8e8);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">☁️</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#0fa89b;color:white;">Zenn</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dbeafe;color:#1d4ed8;">IT</span>
+            <p style="font-size:13px;font-weight:600;color:#18103a;margin:7px 0 5px;line-height:1.5;">AWS Lambdaのコールドスタートを最小化する</p>
+            <p style="font-size:11px;color:#6a5e98;margin:0 0 7px;line-height:1.5;">実測データをもとに最適な設定を解説。</p>
+            <span style="font-size:11px;color:#9a8ec8;">2024.01.08</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #dcd4f8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#ffe0c4,#ffbc8a);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">🧗</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:rgba(0,0,0,.6);color:white;">note</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#ffedd5;color:#c2410c;">ボルダリング</span>
+            <p style="font-size:13px;font-weight:600;color:#18103a;margin:7px 0 5px;line-height:1.5;">ボルダリング初心者がV4を登れるようになった話</p>
+            <p style="font-size:11px;color:#6a5e98;margin:0 0 7px;line-height:1.5;">半年間の練習記録と気づきをまとめました。</p>
+            <span style="font-size:11px;color:#9a8ec8;">2024.01.05</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #dcd4f8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#e4deff,#c0b0f0);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">📐</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:rgba(0,0,0,.6);color:white;">note</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dcfce7;color:#15803d;">数学</span>
+            <p style="font-size:13px;font-weight:600;color:#18103a;margin:7px 0 5px;line-height:1.5;">数学の美しさについて考えてみた</p>
+            <p style="font-size:11px;color:#6a5e98;margin:0 0 7px;line-height:1.5;">抽象と具体の間にある美を言語化する試み。</p>
+            <span style="font-size:11px;color:#9a8ec8;">2023.12.28</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #dcd4f8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#ffd6d6,#ffa0a0);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">📖</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#e05252;color:white;">Booth</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dcfce7;color:#15803d;">数学</span>
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#f3f4f6;color:#374151;margin-left:4px;">本</span>
+            <p style="font-size:13px;font-weight:600;color:#18103a;margin:7px 0 5px;line-height:1.5;">ゼロから学ぶ線形代数 第2版</p>
+            <p style="font-size:11px;color:#6a5e98;margin:0 0 7px;line-height:1.5;">独学者向けに丁寧に書いた数学同人誌。</p>
+            <span style="font-size:11px;color:#9a8ec8;">2023.12.01</span>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid #dcd4f8;cursor:pointer;">
+          <div style="height:124px;background:linear-gradient(135deg,#dce8ff,#aec4f0);display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:40px;">🔢</span>
+            <span style="position:absolute;top:9px;left:9px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;background:#1e293b;color:white;">GitHub</span>
+          </div>
+          <div style="padding:12px 14px;">
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#dcfce7;color:#15803d;">数学</span>
+            <span style="padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600;background:#f3f4f6;color:#374151;margin-left:4px;">本</span>
+            <p style="font-size:13px;font-weight:600;color:#18103a;margin:7px 0 5px;line-height:1.5;">確率論入門 — 測度論から確率へ</p>
+            <p style="font-size:11px;color:#6a5e98;margin:0 0 7px;line-height:1.5;">GitHub Pagesで公開中の数学テキスト。</p>
+            <span style="font-size:11px;color:#9a8ec8;">2023.11.15</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Twitter C -->
+    <section style="background:#fff;padding:36px 40px;border-top:1px solid #dcd4f8;">
+      <h2 style="font-family:'M PLUS Rounded 1c',system-ui;font-size:20px;font-weight:700;color:#18103a;margin:0 0 5px;text-align:center;">つぶやき</h2>
+      <p style="font-size:12px;color:#7a6ea8;text-align:center;margin:0 0 18px;">@neko_engineer_</p>
+      <div style="max-width:460px;margin:0 auto;border:1.5px solid #dcd4f8;border-radius:14px;overflow:hidden;">
+        <div style="background:#f5f3ff;padding:12px 18px;border-bottom:1px solid #dcd4f8;display:flex;align-items:center;gap:8px;">
+          <span style="font-size:15px;">🐱</span>
+          <span style="font-size:13px;font-weight:600;color:#18103a;font-family:'M PLUS Rounded 1c',system-ui;">ねこエンジニア</span>
+          <span style="font-size:12px;color:#7a6ea8;">@neko_engineer_</span>
+        </div>
+        <div style="padding:14px 18px;display:flex;flex-direction:column;gap:11px;">
+          <div style="padding-bottom:11px;border-bottom:1px solid #ece8fc;">
+            <p style="font-size:13px;color:#18103a;margin:0 0 5px;line-height:1.6;">TypeScriptの型システムはほんと奥が深い。今日もまた新しい発見があった🐾</p>
+            <span style="font-size:11px;color:#9a8ec8;">Jan 15, 2024</span>
+          </div>
+          <div>
+            <p style="font-size:13px;color:#18103a;margin:0 0 5px;line-height:1.6;">週末のボルダリング、ついにV4を完登できた！嬉しすぎる🧗✨</p>
+            <span style="font-size:11px;color:#9a8ec8;">Jan 13, 2024</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer C -->
+    <footer style="background:#08051a;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-family:'M PLUS Rounded 1c',system-ui;font-size:15px;font-weight:700;color:white;display:flex;align-items:center;gap:7px;margin-bottom:5px;"><span>🐱</span><span>ねこエンジニア</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.35);">© 2024 ねこエンジニア</div>
+      </div>
+      <div style="display:flex;gap:16px;">
+        <a style="font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;">Zenn</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;">note</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;">Booth</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;">GitHub</a>
+        <a style="font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;">Twitter</a>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<!-- annotation C -->
+<div style="position:absolute;left:2240px;top:1548px;width:280px;background:#fef9c3;padding:12px 15px;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.1);transform:rotate(-1.2deg);font-size:11px;line-height:1.65;color:#4a3e08;">
+  <strong>C — ラベンダー × エディトリアル</strong><br>
+  ダークヒーローで強い印象を与える。クリエイター・個人開発者向けのエッジ感。採用・依頼者ペルソナに◎
+</div>
+
+</x-dc>
+</body>
+</html>
