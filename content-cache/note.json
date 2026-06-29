@@ -1,1 +1,100 @@
-[]
+[
+  {
+    "id": "note-n155c1ba926ca",
+    "platform": "note",
+    "title": "ボルダリングのジム毎の「グレード差」を一覧化（個人の感覚ベース）",
+    "url": "https://note.com/alg_geo/n/n155c1ba926ca",
+    "publishedAt": "2026-05-10T13:20:38.000Z",
+    "excerpt": "はじめに\n一口に5級といっても、ジムによって難易度が全然違いませんか？\n続きをみる",
+    "tags": [],
+    "source": "auto",
+    "category": {
+      "domain": "ボルダリング",
+      "type": "単発"
+    }
+  },
+  {
+    "id": "note-ne022de5a1a97",
+    "platform": "note",
+    "title": "普通じゃない人は「普通じゃない」に悩まず「普通」を捨てよう",
+    "url": "https://note.com/alg_geo/n/ne022de5a1a97",
+    "publishedAt": "2026-02-12T14:47:45.000Z",
+    "excerpt": "概要\n私は中学生のとき、毎日のようにお腹を壊していました。\n「普通」の人はこんなことにならない、と本気で悩んでいました。\n続きをみる",
+    "tags": [],
+    "source": "auto",
+    "category": {
+      "domain": "IT",
+      "type": "単発"
+    }
+  },
+  {
+    "id": "note-nf56b61a22ac8",
+    "platform": "note",
+    "title": "[体験談] 早期卒業した話",
+    "url": "https://note.com/alg_geo/n/nf56b61a22ac8",
+    "publishedAt": "2022-08-30T14:15:01.000Z",
+    "excerpt": "私は、大学を学部3年で早期卒業しました。\nそこで、”一般論的な記事”ではなくて、実際の体験をベースに色々書きました。早期卒業のメリット・デメリットや、難しさ、就活は有利か？など書いていきます。\n早期卒業に興味のある人にとって、参考になればう",
+    "tags": [],
+    "source": "auto",
+    "category": {
+      "domain": "IT",
+      "type": "単発"
+    }
+  },
+  {
+    "id": "note-n67c8b375dff5",
+    "platform": "note",
+    "title": "存在しない数？～虚数は定義するのに、1÷0は定義しないわけ～",
+    "url": "https://note.com/alg_geo/n/n67c8b375dff5",
+    "publishedAt": "2022-08-02T14:22:46.000Z",
+    "excerpt": "虚数は「存在しない数」とよく言われます。現実世界ではイメージがしにくいため、苦手意識を持つ人も少なくないでしょう。\n一方で、$${\\frac{1}{0}}$$ は定義できない（存在しない数）として、習いますよね。\n「いや、虚数みたいに定義す",
+    "tags": [],
+    "source": "auto",
+    "category": {
+      "domain": "IT",
+      "type": "単発"
+    }
+  },
+  {
+    "id": "note-n0ff9716ba214",
+    "platform": "note",
+    "title": "数学の分野一覧　詳細編～中学・高校数学から大学数学へ。こんな応用があります。",
+    "url": "https://note.com/alg_geo/n/n0ff9716ba214",
+    "publishedAt": "2022-07-23T14:35:55.000Z",
+    "excerpt": "前回の記事の続きです。\nこの記事では、数学の分野を広く浅く紹介していきます。\n中学・高校数学で学んでいるのはどんな分野なのか？\n大学数学はどんな分野があるのか？\nどんな応用があるのか？\nなど、数学の全体を見渡せるような記事にします。\n中学生",
+    "tags": [],
+    "source": "auto",
+    "category": {
+      "domain": "数学",
+      "type": "単発"
+    }
+  },
+  {
+    "id": "note-nb348ebd9b9e2",
+    "platform": "note",
+    "title": "数学の分野一覧～中学・高校数学から大学数学へ。こんな応用があります。",
+    "url": "https://note.com/alg_geo/n/nb348ebd9b9e2",
+    "publishedAt": "2022-07-22T13:53:24.000Z",
+    "excerpt": "この記事では、数学の分野一覧を知ることができます。\n中学・高校数学で学んでいるのはどんな分野なのか？\n大学数学はどんな分野があるのか？\nどんな応用があるのか？\nなど、数学の全体を見渡せるような記事にします。\n中学生・高校生を対象にしています",
+    "tags": [],
+    "source": "auto",
+    "category": {
+      "domain": "数学",
+      "type": "単発"
+    }
+  },
+  {
+    "id": "note-n0a4525c94cb1",
+    "platform": "note",
+    "title": "「数学は役に立たないのか？」という疑問も、数学！",
+    "url": "https://note.com/alg_geo/n/n0a4525c94cb1",
+    "publishedAt": "2022-07-14T10:15:24.000Z",
+    "excerpt": "「数学って何の役に立ちますか？」\nよくある質問ですよね。この質問をする人の多くは、数学が嫌いな人ではないでしょうか？\nただ、数学が嫌いなことは悪いことでもなんでもないし、この記事を読んで好きになってほしいとも思っていません。\nこの記事の伝え",
+    "tags": [],
+    "source": "auto",
+    "category": {
+      "domain": "数学",
+      "type": "単発"
+    }
+  }
+]

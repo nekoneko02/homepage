@@ -2,7 +2,7 @@ import { categorize } from "../categorize";
 import type { ContentItem } from "../types";
 
 const NOTE_RSS_URL =
-  process.env.NOTE_RSS_URL ?? "https://note.com/nekoneko02/rss";
+  process.env.NOTE_RSS_URL ?? "https://note.com/alg_geo/rss";
 
 export async function fetchNote(): Promise<ContentItem[]> {
   const RSSParser = (await import("rss-parser")).default;

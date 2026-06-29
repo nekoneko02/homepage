@@ -54,6 +54,7 @@ export default function TwitterEmbed({ handle }: Props) {
             data-lang="ja"
             data-height="400"
             data-theme="light"
+            data-chrome="nofooter noborders"
             href={`https://twitter.com/${handle}`}
           >
             Tweets by @{handle}
@@ -61,9 +62,14 @@ export default function TwitterEmbed({ handle }: Props) {
         </div>
       </div>
 
+      {/* widgets.js ロード後に手動で初期化して確実にレンダリングさせる */}
       <Script
         src="https://platform.twitter.com/widgets.js"
         strategy="lazyOnload"
+        onLoad={() => {
+          // @ts-ignore
+          window.twttr?.widgets?.load();
+        }}
       />
     </section>
   );

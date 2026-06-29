@@ -2,7 +2,7 @@ import matter from "gray-matter";
 import { categorize } from "../categorize";
 import type { ContentItem } from "../types";
 
-const REPO = process.env.ZENN_GH_REPO ?? "nekoneko02/zenn";
+const REPO = process.env.ZENN_GH_REPO ?? "neko_student/zenn";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const ZENN_USERNAME = REPO.split("/")[0];
 
@@ -78,7 +78,7 @@ async function fetchFromGitHub(): Promise<ContentItem[]> {
 async function fetchFromRSS(): Promise<ContentItem[]> {
   const RSSParser = (await import("rss-parser")).default;
   const parser = new RSSParser();
-  const feed = await parser.parseURL(`https://zenn.dev/${ZENN_USERNAME}/feed`);
+  const feed = await parser.parseURL(`https://zenn.dev/${ZENN_USERNAME}/feed?all=1`);
 
   return (feed.items ?? []).map((item, i) => {
     const slug = item.link?.split("/").pop() ?? String(i);
