@@ -21,6 +21,13 @@ interface ZennFrontmatter {
   published_at?: string;
 }
 
+interface ZennBookConfig {
+  title?: string;
+  summary?: string;
+  topics?: string[];
+  published?: boolean;
+}
+
 function buildHeaders(): Record<string, string> {
   const headers: Record<string, string> = {
     Accept: "application/vnd.github.v3+json",
@@ -105,4 +112,56 @@ export async function fetchZenn(): Promise<ContentItem[]> {
     console.warn("[zenn] GitHub API failed, falling back to RSS:", err);
     return await fetchFromRSS();
   }
+}
+
+async function fetchBooksFromGitHub(): Promise<ContentItem[]> {
+  const listRes = await fetch(
+    `https://api.github.com/repos/${REPO}/contents/books`,
+    { headers: buildHeaders() }
+  );
+  if (!listRes.ok) throw new Error(`GitHub API books ${listRes.status}`);
+
+  const dirs: GitHubFile[] = await listRes.json();
+  const bookDirs = dirs.filter((f) => f.type === "dir");
+
+  const results = await Promise.allSettled(
+    bookDirs.map(async (dir) => {
+      const slug = dir.name;
+      let configText: string | null = null;
+      for (const name of ["config.yaml", "config.yml"]) {
+        const url = `https://raw.githubusercontent.com/${REPO}/HEAD/books/${slug}/${name}`;
+        const res = await fetch(url, { headers: buildHeaders() });
+        if (res.ok) {
+          configText = await res.text();
+          break;
+        }
+      }
+      if (!configText) return null;
+
+      const { data } = matter(`---\n${configText}\n---`) as { data: ZennBookConfig };
+      if (data.published === false) return null;
+
+      const raw: Omit<ContentItem, "category"> = {
+        id: `zenn-book-${slug}`,
+        platform: "zenn",
+        title: data.title ?? slug,
+        url: `https://zenn.dev/${ZENN_USERNAME}/books/${slug}`,
+        tags: [...(data.topics ?? []), "book"],
+        excerpt: data.summary,
+        source: "auto",
+      };
+      return categorize(raw, { manualDomains: ["本"] });
+    })
+  );
+
+  return results
+    .filter(
+      (r): r is PromiseFulfilledResult<ContentItem> =>
+        r.status === "fulfilled" && r.value !== null
+    )
+    .map((r) => r.value);
+}
+
+export async function fetchZennBooks(): Promise<ContentItem[]> {
+  return fetchBooksFromGitHub();
 }

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import type { ContentItem } from "./types";
-import { fetchZenn } from "./sources/zenn";
+import { fetchZenn, fetchZennBooks } from "./sources/zenn";
 import { fetchNote } from "./sources/note";
 import { fetchBooth } from "./sources/booth";
 import { fetchBooks } from "./sources/books";
@@ -46,9 +46,10 @@ async function fetchWithFallback(
 }
 
 export async function aggregate(): Promise<ContentItem[]> {
-  const [zenn, note] = await Promise.all([
+  const [zenn, note, zennBooks] = await Promise.all([
     fetchWithFallback("zenn", fetchZenn),
     fetchWithFallback("note", fetchNote),
+    fetchWithFallback("zenn-books", fetchZennBooks),
   ]);
 
   const manual: ContentItem[] = [
@@ -57,7 +58,7 @@ export async function aggregate(): Promise<ContentItem[]> {
     ...fetchProducts(),
   ];
 
-  const all = [...zenn, ...note, ...manual];
+  const all = [...zenn, ...zennBooks, ...note, ...manual];
 
   const seen = new Set<string>();
   const deduped = all.filter((item) => {

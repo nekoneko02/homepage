@@ -159,7 +159,7 @@ export default function ContentSection({ items }: Props) {
             <span
               style={{ fontSize: 11, color: "#7a8e98", fontWeight: 500, minWidth: 32 }}
             >
-              PF
+              プラットフォーム
             </span>
             {platformOptions.map(({ value, label }) => (
               <button
