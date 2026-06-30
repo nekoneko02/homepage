@@ -10,6 +10,7 @@
     "source": "auto",
     "category": {
       "domain": [
+        "ブログ",
         "ボルダリング"
       ],
       "type": "単発"
@@ -58,7 +59,8 @@
     "source": "auto",
     "category": {
       "domain": [
-        "ブログ"
+        "ブログ",
+        "数学"
       ],
       "type": "単発"
     }
@@ -74,6 +76,7 @@
     "source": "auto",
     "category": {
       "domain": [
+        "ブログ",
         "数学"
       ],
       "type": "単発"
@@ -90,6 +93,7 @@
     "source": "auto",
     "category": {
       "domain": [
+        "ブログ",
         "数学"
       ],
       "type": "単発"
@@ -106,6 +110,7 @@
     "source": "auto",
     "category": {
       "domain": [
+        "ブログ",
         "数学"
       ],
       "type": "単発"
