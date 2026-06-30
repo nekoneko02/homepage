@@ -5,7 +5,7 @@ const platformLabel: Record<Platform, string> = {
   note: "note",
   booth: "Booth",
   github: "GitHub",
-  product: "Product",
+  site: "オリジナルサイト",
 };
 
 const platformBadge: Record<Platform, { bg: string; color: string }> = {
@@ -13,7 +13,7 @@ const platformBadge: Record<Platform, { bg: string; color: string }> = {
   note: { bg: "rgba(0,0,0,0.6)", color: "#ffffff" },
   booth: { bg: "#e05252", color: "#ffffff" },
   github: { bg: "#1e293b", color: "#ffffff" },
-  product: { bg: "#6d28d9", color: "#ffffff" },
+  site: { bg: "#6d28d9", color: "#ffffff" },
 };
 
 const domainTag: Record<Domain, { bg: string; color: string }> = {
@@ -29,7 +29,7 @@ const domainTag: Record<Domain, { bg: string; color: string }> = {
 const thumbnailGradient = (platform: Platform, domains: Domain[]): string => {
   if (platform === "booth") return "linear-gradient(135deg, #ffd6d6, #ffa0a0)";
   if (platform === "github") return "linear-gradient(135deg, #dce8ff, #aec4f0)";
-  if (platform === "product") return "linear-gradient(135deg, #ede9fe, #c0b0f0)";
+  if (platform === "site") return "linear-gradient(135deg, #ede9fe, #c0b0f0)";
   if (domains.includes("ボルダリング")) return "linear-gradient(135deg, #ffe0c4, #ffbc8a)";
   if (domains.includes("数学")) return "linear-gradient(135deg, #e4deff, #c0b0f0)";
   return "linear-gradient(135deg, #b2f0ea, #6fcfc7)";
@@ -40,7 +40,7 @@ const platformEmoji: Record<Platform, string> = {
   note: "✏️",
   booth: "🛒",
   github: "📚",
-  product: "🚀",
+  site: "🚀",
 };
 
 function formatDate(iso?: string): string {

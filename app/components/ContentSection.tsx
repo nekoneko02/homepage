@@ -23,6 +23,7 @@ const platformOptions: { value: PlatformFilter; label: string }[] = [
   { value: "note", label: "note" },
   { value: "booth", label: "Booth" },
   { value: "github", label: "GitHub" },
+  { value: "site", label: "オリジナルサイト" },
 ];
 
 interface Props {

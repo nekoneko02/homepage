@@ -95,9 +95,9 @@ describe("github (books)", () => {
   });
 });
 
-describe("product", () => {
+describe("site", () => {
   it("固定で プロダクト が付く", () => {
-    const result = categorize(base("product", { title: "新サービスのリリース" }));
+    const result = categorize(base("site", { title: "新サービスのリリース" }));
     expect(domains(result)).toContain("プロダクト");
   });
 });

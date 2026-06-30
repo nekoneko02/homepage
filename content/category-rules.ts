@@ -25,12 +25,13 @@ export const fixedDomainsByPlatform: Partial<Record<Platform, Domain[]>> = {
   zenn: ["IT", "ブログ"],
   note: ["ブログ"],
   booth: ["本"],
-  product: ["プロダクト"],
+  site: ["プロダクト"],
 };
 
 // Used only when fixed + extracted + manual all produce nothing
 export const defaultDomainByPlatform: Partial<Record<Platform, Domain>> = {
   github: "その他",
+  site: "プロダクト",
 };
 
 export const seriesPatterns: { match: RegExp; series: string }[] = [
@@ -38,7 +39,7 @@ export const seriesPatterns: { match: RegExp; series: string }[] = [
 ];
 
 export const typeRules = {
-  bookPlatforms: ["github", "booth"] as Platform[],
+  bookPlatforms: ["booth"] as Platform[],
   bookTagPattern: /^本$|^book$/i,
   studyPattern: /資格|試験|勉強|検定/,
 };
