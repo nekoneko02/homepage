@@ -16,7 +16,6 @@ interface GitHubFile {
 interface ZennFrontmatter {
   title?: string;
   emoji?: string;
-  type?: "tech" | "idea";
   topics?: string[];
   published?: boolean;
   published_at?: string;
@@ -64,7 +63,7 @@ async function fetchFromGitHub(): Promise<ContentItem[]> {
         source: "auto",
       };
 
-      return categorize(raw, { zennType: data.type });
+      return categorize(raw);
     })
   );
 
@@ -95,7 +94,7 @@ async function fetchFromRSS(): Promise<ContentItem[]> {
       tags: [],
       source: "auto",
     };
-    return categorize(raw, { zennType: "tech" });
+    return categorize(raw);
   });
 }
 

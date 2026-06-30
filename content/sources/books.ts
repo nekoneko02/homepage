@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { categorize } from "../categorize";
-import type { ContentItem } from "../types";
+import type { ContentItem, Domain } from "../types";
 
 interface BookEntry {
   title: string;
@@ -10,6 +10,7 @@ interface BookEntry {
   tags?: string[];
   thumbnail?: string;
   excerpt?: string;
+  domain?: Domain[];
 }
 
 export function fetchBooks(): ContentItem[] {
@@ -26,9 +27,9 @@ export function fetchBooks(): ContentItem[] {
       publishedAt: entry.publishedAt,
       excerpt: entry.excerpt,
       thumbnail: entry.thumbnail,
-      tags: entry.tags ?? ["数学", "本"],
+      tags: entry.tags ?? [],
       source: "manual",
     };
-    return categorize(base);
+    return categorize(base, { manualDomains: entry.domain });
   });
 }

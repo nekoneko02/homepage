@@ -1,31 +1,38 @@
 import type { ContentItem, Domain, ContentType, Platform } from "./types";
 import {
   domainKeywords,
-  domainDefaultByPlatform,
+  fixedDomainsByPlatform,
+  defaultDomainByPlatform,
   seriesPatterns,
   typeRules,
 } from "./category-rules";
-
-const keywordSkipPlatforms: Platform[] = ["booth", "github"];
 
 function detectDomain(
   tags: string[],
   title: string,
   platform: Platform,
-  zennType?: string
+  manualDomains?: Domain[]
 ): Domain[] {
-  if (platform === "zenn" && zennType === "tech") return ["IT"];
-  if (keywordSkipPlatforms.includes(platform)) return [domainDefaultByPlatform[platform]];
+  const result = new Set<Domain>();
 
-  const tagStr = tags.join(" ");
-  const matched = new Set<Domain>();
+  // Step 1: Fixed categories for this platform (always added)
+  for (const d of fixedDomainsByPlatform[platform] ?? []) result.add(d);
 
+  // Step 2: Manually specified domains (from data files)
+  for (const d of manualDomains ?? []) result.add(d);
+
+  // Step 3: Keyword extraction from tags + title (all platforms)
+  const searchText = `${tags.join(" ")} ${title}`;
   for (const { pattern, domain } of domainKeywords) {
-    if (pattern.test(tagStr) || pattern.test(title)) matched.add(domain);
+    if (pattern.test(searchText)) result.add(domain);
   }
 
-  if (matched.size > 0) return Array.from(matched);
-  return [domainDefaultByPlatform[platform]];
+  // Step 4: Platform default if nothing detected
+  if (result.size === 0) {
+    result.add(defaultDomainByPlatform[platform] ?? "その他");
+  }
+
+  return Array.from(result);
 }
 
 function detectSeries(title: string): string | undefined {
@@ -57,13 +64,13 @@ function detectType(
 
 export function categorize(
   item: Omit<ContentItem, "category">,
-  opts?: { zennType?: string }
+  opts?: { manualDomains?: Domain[] }
 ): ContentItem {
   const domain = detectDomain(
     item.tags,
     item.title,
     item.platform,
-    opts?.zennType
+    opts?.manualDomains
   );
   const series = detectSeries(item.title);
   const type = detectType(item.platform, item.tags, item.title);

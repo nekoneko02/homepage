@@ -15,6 +15,7 @@ const domainOptions: DomainFilter[] = [
   "プロダクト",
   "ブログ",
   "本",
+  "その他",
 ];
 const platformOptions: { value: PlatformFilter; label: string }[] = [
   { value: "すべて", label: "すべて" },

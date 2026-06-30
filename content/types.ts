@@ -1,5 +1,5 @@
 export type Platform = "zenn" | "note" | "booth" | "github" | "product";
-export type Domain = "IT" | "数学" | "ボルダリング" | "プロダクト" | "ブログ" | "本";
+export type Domain = "IT" | "数学" | "ボルダリング" | "プロダクト" | "ブログ" | "本" | "その他";
 export type ContentType = "資格・勉強" | "単発" | "本";
 
 export interface Category {

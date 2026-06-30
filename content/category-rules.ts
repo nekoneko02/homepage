@@ -7,7 +7,7 @@ export const domainKeywords: { pattern: RegExp; domain: Domain }[] = [
     domain: "IT",
   },
   {
-    pattern: /数学|math|線形代数|微積分|確率|統計|代数|幾何|解析|数式|行列|ベクトル/i,
+    pattern: /数学|math|線形代数|微積分|確率|統計|代数|幾何|解析|数式|行列|ベクトル|虚数/i,
     domain: "数学",
   },
   {
@@ -20,12 +20,17 @@ export const domainKeywords: { pattern: RegExp; domain: Domain }[] = [
   },
 ];
 
-export const domainDefaultByPlatform: Record<Platform, Domain> = {
-  zenn: "IT",
-  note: "ブログ",
-  booth: "本",
-  github: "数学",
-  product: "プロダクト",
+// Always added regardless of content
+export const fixedDomainsByPlatform: Partial<Record<Platform, Domain[]>> = {
+  zenn: ["IT", "ブログ"],
+  note: ["ブログ"],
+  booth: ["本"],
+  product: ["プロダクト"],
+};
+
+// Used only when fixed + extracted + manual all produce nothing
+export const defaultDomainByPlatform: Partial<Record<Platform, Domain>> = {
+  github: "その他",
 };
 
 export const seriesPatterns: { match: RegExp; series: string }[] = [

@@ -23,6 +23,7 @@ const domainTag: Record<Domain, { bg: string; color: string }> = {
   プロダクト: { bg: "#ede9fe", color: "#6d28d9" },
   ブログ: { bg: "#fce7f3", color: "#9d174d" },
   本: { bg: "#fef9c3", color: "#854d0e" },
+  その他: { bg: "#f1f5f9", color: "#475569" },
 };
 
 const thumbnailGradient = (platform: Platform, domains: Domain[]): string => {

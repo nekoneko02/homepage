@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { categorize } from "../categorize";
-import type { ContentItem } from "../types";
+import type { ContentItem, Domain } from "../types";
 
 interface BoothEntry {
   title: string;
@@ -10,6 +10,7 @@ interface BoothEntry {
   tags?: string[];
   thumbnail?: string;
   excerpt?: string;
+  domain?: Domain[];
 }
 
 export function fetchBooth(): ContentItem[] {
@@ -29,6 +30,6 @@ export function fetchBooth(): ContentItem[] {
       tags: entry.tags ?? [],
       source: "manual",
     };
-    return categorize(base);
+    return categorize(base, { manualDomains: entry.domain });
   });
 }
