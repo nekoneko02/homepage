@@ -17,6 +17,26 @@
     }
   },
   {
+    "id": "zenn-0d53251abf2061",
+    "platform": "zenn",
+    "title": "上級 MuleSoft デベロッパー（MCD2）を勉強するためだけのサンプルコード(Exchange, CICD)",
+    "url": "https://zenn.dev/neko_student/articles/0d53251abf2061",
+    "publishedAt": "2024-08-06T23:42:00.000Z",
+    "tags": [
+      "mulesoft",
+      "maven",
+      "mcd2"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "IT",
+        "ブログ"
+      ],
+      "type": "資格・勉強"
+    }
+  },
+  {
     "id": "zenn-15163e521ee576",
     "platform": "zenn",
     "title": "個人開発のホスティング先は、何を学びたいかで決めよう",
@@ -31,6 +51,45 @@
         "IT",
         "ブログ",
         "プロダクト"
+      ],
+      "type": "単発"
+    }
+  },
+  {
+    "id": "zenn-1d70a033f8d0e6",
+    "platform": "zenn",
+    "title": "ITエンジニア 新卒1年目の振り返り：先輩を盲信して失敗した話",
+    "url": "https://zenn.dev/neko_student/articles/1d70a033f8d0e6",
+    "publishedAt": "2024-07-15T00:00:00.000Z",
+    "tags": [
+      "失敗談",
+      "新卒"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "IT",
+        "ブログ"
+      ],
+      "type": "単発"
+    }
+  },
+  {
+    "id": "zenn-1fc9c40284c3ac",
+    "platform": "zenn",
+    "title": "ITエンジニア 新卒1年目の振り返り：業務周りで経験したこと",
+    "url": "https://zenn.dev/neko_student/articles/1fc9c40284c3ac",
+    "publishedAt": "2024-08-21T09:18:00.000Z",
+    "tags": [
+      "業務",
+      "新卒",
+      "1年目"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "IT",
+        "ブログ"
       ],
       "type": "単発"
     }
@@ -137,6 +196,27 @@
     }
   },
   {
+    "id": "zenn-58abdc0a4d6fa4",
+    "platform": "zenn",
+    "title": "ITエンジニア 新卒1年目の振り返り：初めての見積で大失敗",
+    "url": "https://zenn.dev/neko_student/articles/58abdc0a4d6fa4",
+    "publishedAt": "2024-08-31T05:43:00.000Z",
+    "tags": [
+      "失敗談",
+      "新卒",
+      "1年目",
+      "見積"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "IT",
+        "ブログ"
+      ],
+      "type": "単発"
+    }
+  },
+  {
     "id": "zenn-595112769364f7",
     "platform": "zenn",
     "title": "データベーススペシャリスト合格体験記~新卒2年目で合格した勉強法と感想~",
@@ -146,6 +226,47 @@
       "DB",
       "情報処理技術者試験",
       "データベーススペシャリスト"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "IT",
+        "ブログ"
+      ],
+      "type": "資格・勉強"
+    }
+  },
+  {
+    "id": "zenn-5e9849afcdef0d",
+    "platform": "zenn",
+    "title": "OSSのデザインパターン解説シリーズ：Iteratorパターンの活用と悪いコード例",
+    "url": "https://zenn.dev/neko_student/articles/5e9849afcdef0d",
+    "publishedAt": "2024-05-22T23:58:00.000Z",
+    "tags": [
+      "java",
+      "配列",
+      "デザインパターン",
+      "list"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "IT",
+        "ブログ"
+      ],
+      "type": "単発"
+    }
+  },
+  {
+    "id": "zenn-640029c5af6989",
+    "platform": "zenn",
+    "title": "ITエンジニア 新卒1年目の振り返り：勉強したことまとめ",
+    "url": "https://zenn.dev/neko_student/articles/640029c5af6989",
+    "publishedAt": "2024-06-30T07:55:00.000Z",
+    "tags": [
+      "勉強",
+      "新卒",
+      "新卒1年目"
     ],
     "source": "auto",
     "category": {
@@ -168,6 +289,27 @@
       "ロック",
       "シーケンス図",
       "トランザクション分離レベル"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "IT",
+        "ブログ"
+      ],
+      "type": "単発"
+    }
+  },
+  {
+    "id": "zenn-7e0384e0f1332f",
+    "platform": "zenn",
+    "title": "OSSのデザインパターン解説シリーズ：Singletonパターンの活用と悪いコード例",
+    "url": "https://zenn.dev/neko_student/articles/7e0384e0f1332f",
+    "publishedAt": "2024-06-16T23:20:00.000Z",
+    "tags": [
+      "java",
+      "singleton",
+      "デザインパターン",
+      "標準入出力"
     ],
     "source": "auto",
     "category": {
@@ -216,6 +358,49 @@
         "ブログ"
       ],
       "type": "資格・勉強"
+    }
+  },
+  {
+    "id": "zenn-8861b63a2d9598",
+    "platform": "zenn",
+    "title": "Anypoint Code BuilderでRun and Debugができない場合の対処法",
+    "url": "https://zenn.dev/neko_student/articles/8861b63a2d9598",
+    "publishedAt": "2024-09-16T14:01:00.000Z",
+    "tags": [
+      "vscode",
+      "mulesoft",
+      "visualstudiocode",
+      "anypoint"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "IT",
+        "ブログ"
+      ],
+      "type": "単発"
+    }
+  },
+  {
+    "id": "zenn-d2f9e6abe8727a",
+    "platform": "zenn",
+    "title": "OSSのデザインパターン解説シリーズ：Adapter(Wrapper)パターンの活用と悪いコード例",
+    "url": "https://zenn.dev/neko_student/articles/d2f9e6abe8727a",
+    "publishedAt": "2024-05-28T00:28:00.000Z",
+    "tags": [
+      "java",
+      "map",
+      "デザインパターン",
+      "hash",
+      "set"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "IT",
+        "ブログ"
+      ],
+      "type": "単発"
     }
   },
   {
