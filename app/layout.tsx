@@ -19,6 +19,10 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: "ねこエンジニア",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/icon.png",
+  },
   description:
     "IT・数学・ボルダリングが好きなエンジニアのハブページ。Zenn・note・同人誌・個人プロダクトへの導線。",
   openGraph: {

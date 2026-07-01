@@ -61,7 +61,9 @@ export default function Header({ links }: Props) {
           gap: 6,
         }}
       >
-        🐱 ねこエンジニア
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/icon.png" alt="" style={{ width: 28, height: 28, borderRadius: "50%", objectFit: "cover" }} />
+        ねこエンジニア
       </a>
 
       <nav style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>

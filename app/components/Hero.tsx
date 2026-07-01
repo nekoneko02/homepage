@@ -63,7 +63,7 @@ export default function Hero({ profile }: Props) {
           </h1>
 
           {/* Bio */}
-          <p
+          <div
             style={{
               fontSize: 14,
               color: "#4e6570",
@@ -72,8 +72,12 @@ export default function Hero({ profile }: Props) {
               marginBottom: 22,
             }}
           >
-            {profile.bio}
-          </p>
+            {profile.bio.split("\n\n").map((para, i) => (
+              <p key={i} style={{ marginBottom: i < profile.bio.split("\n\n").length - 1 ? 10 : 0 }}>
+                {para}
+              </p>
+            ))}
+          </div>
 
           {/* Domain badges */}
           <div
@@ -155,16 +159,18 @@ export default function Hero({ profile }: Props) {
               width: 164,
               height: 164,
               borderRadius: "50%",
-              backgroundColor: "#ffffff",
-              border: "3px solid rgba(15,168,155,0.18)",
-              boxShadow: "0 6px 32px rgba(15,168,155,0.20)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 72,
+              backgroundColor: "#f0faf9",
+              border: "3px solid rgba(15,168,155,0.25)",
+              boxShadow: "0 6px 32px rgba(15,168,155,0.22)",
+              overflow: "hidden",
             }}
           >
-            🐱
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/neko-engineer.png"
+              alt="ねこエンジニア"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 15%" }}
+            />
           </div>
           <p
             style={{
@@ -176,7 +182,6 @@ export default function Hero({ profile }: Props) {
           >
             {profile.name}
           </p>
-          <p style={{ fontSize: 12, color: "#6b8090" }}>{profile.handle}</p>
         </div>
       </div>
     </section>
