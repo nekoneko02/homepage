@@ -35,7 +35,9 @@ export default function Footer({ links }: Props) {
             marginBottom: 4,
           }}
         >
-          🐱 ねこエンジニア
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icon.png" alt="" style={{ width: 24, height: 24, borderRadius: "50%", objectFit: "cover", verticalAlign: "middle", marginRight: 6 }} />
+          ねこエンジニア
         </p>
         <p style={{ fontSize: 11, color: "rgba(255,255,255,0.38)" }}>
           © {new Date().getFullYear()} ねこエンジニア
