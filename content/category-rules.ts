@@ -18,6 +18,10 @@ export const domainKeywords: { pattern: RegExp; domain: Domain }[] = [
     pattern: /プロダクト|サービス|リリース|startup|スタートアップ|個人開発|saas/i,
     domain: "プロダクト",
   },
+  {
+    pattern: /(^|\s)(?:本|book)(\s|$)/i,
+    domain: "本",
+  },
 ];
 
 // Always added regardless of content
@@ -37,9 +41,3 @@ export const defaultDomainByPlatform: Partial<Record<Platform, Domain>> = {
 export const seriesPatterns: { match: RegExp; series: string }[] = [
   { match: /ゼロから/, series: "ゼロから" },
 ];
-
-export const typeRules = {
-  bookPlatforms: ["booth"] as Platform[],
-  bookTagPattern: /^本$|^book$/i,
-  studyPattern: /資格|試験|勉強|検定/,
-};

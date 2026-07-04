@@ -17,6 +17,7 @@ const domainKeywords = [
   { pattern: /数学|math|線形代数|微積分|確率|統計|代数|幾何|解析|数式|行列|ベクトル|虚数/i, domain: "数学" },
   { pattern: /ボルダリング|クライミング|boulder|climb|岩|ジム|課題|グレード/i, domain: "ボルダリング" },
   { pattern: /プロダクト|サービス|リリース|startup|スタートアップ|個人開発|saas/i, domain: "プロダクト" },
+  { pattern: /(^|\s)(?:本|book)(\s|$)/i, domain: "本" },
 ];
 
 const fixedDomainsByPlatform = {
@@ -35,12 +36,6 @@ const seriesPatterns = [
   { match: /ゼロから/, series: "ゼロから" },
 ];
 
-const typeRules = {
-  bookPlatforms: ["booth"],
-  bookTagPattern: /^本$|^book$/i,
-  studyPattern: /資格|試験|勉強|検定/,
-};
-
 function categorize(item) {
   const { platform, tags, title } = item;
 
@@ -57,14 +52,7 @@ function categorize(item) {
     if (match.test(title)) { series = s; break; }
   }
 
-  let type = "単発";
-  if (typeRules.bookPlatforms.includes(platform) || tags.some(t => typeRules.bookTagPattern.test(t))) {
-    type = "本";
-  } else if (typeRules.studyPattern.test(title) || tags.some(t => typeRules.studyPattern.test(t))) {
-    type = "資格・勉強";
-  }
-
-  return { ...item, category: { domain, ...(series ? { series } : {}), type } };
+  return { ...item, category: { domain, ...(series ? { series } : {}) } };
 }
 
 // --- Utilities ---

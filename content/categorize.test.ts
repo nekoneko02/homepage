@@ -89,6 +89,12 @@ describe("github (books)", () => {
     expect(domains(result)).not.toContain("その他");
   });
 
+  it("タグに 本 があれば 本 が domain に付く", () => {
+    const result = categorize(base("github", { tags: ["数学", "ZFC公理", "本"] }));
+    expect(domains(result)).toContain("数学");
+    expect(domains(result)).toContain("本");
+  });
+
   it("manualDomains で明示指定できる", () => {
     const result = categorize(base("github"), { manualDomains: ["数学"] });
     expect(domains(result)).toContain("数学");

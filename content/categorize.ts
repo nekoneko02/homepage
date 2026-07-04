@@ -1,10 +1,9 @@
-import type { ContentItem, Domain, ContentType, Platform } from "./types";
+import type { ContentItem, Domain, Platform } from "./types";
 import {
   domainKeywords,
   fixedDomainsByPlatform,
   defaultDomainByPlatform,
   seriesPatterns,
-  typeRules,
 } from "./category-rules";
 
 function detectDomain(
@@ -42,26 +41,6 @@ function detectSeries(title: string): string | undefined {
   return undefined;
 }
 
-function detectType(
-  platform: Platform,
-  tags: string[],
-  title: string
-): ContentType {
-  if (
-    typeRules.bookPlatforms.includes(platform) ||
-    tags.some((t) => typeRules.bookTagPattern.test(t))
-  ) {
-    return "本";
-  }
-  if (
-    typeRules.studyPattern.test(title) ||
-    tags.some((t) => typeRules.studyPattern.test(t))
-  ) {
-    return "資格・勉強";
-  }
-  return "単発";
-}
-
 export function categorize(
   item: Omit<ContentItem, "category">,
   opts?: { manualDomains?: Domain[] }
@@ -73,7 +52,6 @@ export function categorize(
     opts?.manualDomains
   );
   const series = detectSeries(item.title);
-  const type = detectType(item.platform, item.tags, item.title);
 
-  return { ...item, category: { domain, series, type } };
+  return { ...item, category: { domain, series } };
 }
