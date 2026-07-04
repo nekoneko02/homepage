@@ -1,9 +1,7 @@
 import fs from "fs";
 import path from "path";
 import type { ContentItem } from "./types";
-import { fetchNote } from "./sources/note";
 import { fetchBooth } from "./sources/booth";
-import { fetchGitHub } from "./sources/github";
 
 const CACHE_DIR = path.join(process.cwd(), "content-cache");
 
@@ -17,37 +15,9 @@ function readCache(name: string): ContentItem[] {
   }
 }
 
-function writeCache(name: string, items: ContentItem[]) {
-  try {
-    fs.mkdirSync(CACHE_DIR, { recursive: true });
-    fs.writeFileSync(
-      path.join(CACHE_DIR, `${name}.json`),
-      JSON.stringify(items, null, 2)
-    );
-  } catch {
-    // non-fatal
-  }
-}
-
-async function fetchWithFallback(
-  name: string,
-  fetcher: () => Promise<ContentItem[]>
-): Promise<ContentItem[]> {
-  try {
-    const items = await fetcher();
-    writeCache(name, items);
-    return items;
-  } catch (err) {
-    console.warn(`[${name}] fetch failed, using snapshot:`, err);
-    return readCache(name);
-  }
-}
-
 export async function aggregate(): Promise<ContentItem[]> {
-  const [note, github] = await Promise.all([
-    fetchWithFallback("note", fetchNote),
-    fetchWithFallback("github", fetchGitHub),
-  ]);
+  const note = readCache("note");
+  const github = readCache("github");
 
   const manual: ContentItem[] = [...fetchBooth()];
 
