@@ -37,3 +37,6 @@ next-env.d.ts
 
 # amplify
 .amplify
+
+# local working docs
+/docs/issue/
