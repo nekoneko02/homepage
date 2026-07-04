@@ -11,49 +11,7 @@ import RSSParser from "rss-parser";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CACHE_DIR = path.join(__dirname, "..", "content-cache");
 
-// --- Category rules (mirrors content/category-rules.ts) ---
-const domainKeywords = [
-  { pattern: /typescript|javascript|python|aws|gcp|react|nextjs|next\.js|docker|linux|プログラミング|エンジニア|開発|api|golang|rust|sql|database|web|フロント|バック|クラウド|terraform|kubernetes|k8s/i, domain: "IT" },
-  { pattern: /数学|math|線形代数|微積分|確率|統計|代数|幾何|解析|数式|行列|ベクトル|虚数/i, domain: "数学" },
-  { pattern: /ボルダリング|クライミング|boulder|climb|岩|ジム|課題|グレード/i, domain: "ボルダリング" },
-  { pattern: /プロダクト|サービス|リリース|startup|スタートアップ|個人開発|saas/i, domain: "プロダクト" },
-  { pattern: /(^|\s)(?:本|book)(\s|$)/i, domain: "本" },
-];
-
-const fixedDomainsByPlatform = {
-  zenn: ["IT", "ブログ"],
-  note: ["ブログ"],
-  booth: ["本"],
-  site: ["プロダクト"],
-};
-
-const defaultDomainByPlatform = {
-  github: "その他",
-  site: "プロダクト",
-};
-
-const seriesPatterns = [
-  { match: /ゼロから/, series: "ゼロから" },
-];
-
-function categorize(item) {
-  const { platform, tags, title } = item;
-
-  const result = new Set(fixedDomainsByPlatform[platform] ?? []);
-  const searchText = `${tags.join(" ")} ${title}`;
-  for (const { pattern, domain } of domainKeywords) {
-    if (pattern.test(searchText)) result.add(domain);
-  }
-  if (result.size === 0) result.add(defaultDomainByPlatform[platform] ?? "その他");
-  const domain = Array.from(result);
-
-  let series;
-  for (const { match, series: s } of seriesPatterns) {
-    if (match.test(title)) { series = s; break; }
-  }
-
-  return { ...item, category: { domain, ...(series ? { series } : {}) } };
-}
+import { categorize } from "./lib/categorize.mjs";
 
 // --- Utilities ---
 function hash(obj) {
@@ -146,6 +104,9 @@ function feedToItems(repo, feed) {
     url: item.url,
     publishedAt: item.date_published,
     excerpt: item.summary,
+    thumbnail: item.thumbnail,
+    newsText: item.news_text,
+    visibility: item.visibility,
     tags: item.tags ?? repo.topics.filter(t => t !== NEKO_TOPIC),
     source: "auto",
   }));
@@ -172,6 +133,28 @@ async function fetchGitHub() {
     .flatMap(r => r.value);
 }
 
+// --- Booth ---
+function fetchBooth() {
+  const filePath = path.join(__dirname, "..", "data", "booth.json");
+  const raw = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  return raw.map((entry, i) => {
+    const slug = entry.url.split("/").pop() ?? String(i);
+    return categorize({
+      id: `booth-${slug}`,
+      platform: "booth",
+      title: entry.title,
+      url: entry.url,
+      publishedAt: entry.publishedAt,
+      excerpt: entry.excerpt,
+      thumbnail: entry.thumbnail,
+      newsText: entry.newsText,
+      visibility: entry.visibility,
+      tags: entry.tags ?? [],
+      source: "manual",
+    }, entry.domain ? { manualDomains: entry.domain } : undefined);
+  });
+}
+
 // --- Main ---
 async function main() {
   const [noteItems, githubItems] = await Promise.all([
@@ -180,6 +163,16 @@ async function main() {
   ]);
 
   let hasDiff = false;
+
+  const boothItems = fetchBooth();
+  const cachedBooth = readCache("booth");
+  if (hash(boothItems) !== hash(cachedBooth)) {
+    console.log("booth: diff detected, updating cache");
+    writeCache("booth", boothItems);
+    hasDiff = true;
+  } else {
+    console.log("booth: no diff");
+  }
 
   if (noteItems !== null) {
     const cached = readCache("note");

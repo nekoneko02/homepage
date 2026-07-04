@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import type { ContentItem } from "./types";
-import { fetchBooth } from "./sources/booth";
 
 const CACHE_DIR = path.join(process.cwd(), "content-cache");
 
@@ -18,10 +17,9 @@ function readCache(name: string): ContentItem[] {
 export async function aggregate(): Promise<ContentItem[]> {
   const note = readCache("note");
   const github = readCache("github");
+  const booth = readCache("booth");
 
-  const manual: ContentItem[] = [...fetchBooth()];
-
-  const all = [...note, ...github, ...manual];
+  const all = [...note, ...github, ...booth];
 
   const seen = new Set<string>();
   const deduped = all.filter((item) => {
