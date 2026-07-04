@@ -5,4 +5,5 @@ export type {
   Domain,
   ContentType,
   Category,
+  VisibilityTarget,
 } from "./types";

@@ -43,6 +43,7 @@ export default function ContentSection({ items }: Props) {
   }, []);
 
   const filtered = items.filter((item) => {
+    if (item.visibility && !item.visibility.includes("content")) return false;
     const domainMatch = domain === "すべて" || item.category.domain.includes(domain);
     const platformMatch = platform === "すべて" || item.platform === platform;
     return domainMatch && platformMatch;
@@ -94,7 +95,7 @@ export default function ContentSection({ items }: Props) {
   };
 
   return (
-    <section style={{ backgroundColor: "#f4f9f8", padding: "36px 40px 44px" }}>
+    <section className="content-section" style={{ backgroundColor: "#f4f9f8" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         {/* Section header */}
         <div
@@ -202,18 +203,6 @@ export default function ContentSection({ items }: Props) {
         )}
       </div>
 
-      <style>{`
-        @media (max-width: 1023px) {
-          .content-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-        }
-        @media (max-width: 639px) {
-          .content-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

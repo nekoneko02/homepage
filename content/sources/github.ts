@@ -1,5 +1,5 @@
 import { categorize } from "../categorize";
-import type { ContentItem, Platform } from "../types";
+import type { ContentItem, Platform, VisibilityTarget } from "../types";
 
 const GITHUB_USER = process.env.GITHUB_USER ?? "nekoneko02";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
@@ -22,6 +22,9 @@ interface FeedItem {
   url: string;
   date_published?: string;
   summary?: string;
+  thumbnail?: string;
+  news_text?: string;
+  visibility?: VisibilityTarget[];
   tags?: string[];
 }
 
@@ -82,6 +85,9 @@ function feedToItems(repo: GitHubRepo, feed: FeedJson): ContentItem[] {
       url: item.url,
       publishedAt: item.date_published,
       excerpt: item.summary,
+      thumbnail: item.thumbnail,
+      newsText: item.news_text,
+      visibility: item.visibility,
       tags: item.tags ?? repo.topics.filter((t) => t !== NEKO_TOPIC),
       source: "auto",
     };

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { categorize } from "../categorize";
-import type { ContentItem, Domain } from "../types";
+import type { ContentItem, Domain, VisibilityTarget } from "../types";
 
 interface BoothEntry {
   title: string;
@@ -10,6 +10,8 @@ interface BoothEntry {
   tags?: string[];
   thumbnail?: string;
   excerpt?: string;
+  newsText?: string;
+  visibility?: VisibilityTarget[];
   domain?: Domain[];
 }
 
@@ -27,6 +29,8 @@ export function fetchBooth(): ContentItem[] {
       publishedAt: entry.publishedAt,
       excerpt: entry.excerpt,
       thumbnail: entry.thumbnail,
+      newsText: entry.newsText,
+      visibility: entry.visibility,
       tags: entry.tags ?? [],
       source: "manual",
     };

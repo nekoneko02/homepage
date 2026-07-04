@@ -15,9 +15,9 @@ interface Props {
 export default function Footer({ links }: Props) {
   return (
     <footer
+      className="site-footer"
       style={{
         backgroundColor: "#0c1e2a",
-        padding: "26px 40px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -44,7 +44,7 @@ export default function Footer({ links }: Props) {
         </p>
       </div>
 
-      <nav style={{ display: "flex", gap: 16 }}>
+      <nav style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
         {footerLinks.map(({ key, label }) => (
           <a
             key={key}
@@ -61,6 +61,7 @@ export default function Footer({ links }: Props) {
           </a>
         ))}
       </nav>
+
     </footer>
   );
 }

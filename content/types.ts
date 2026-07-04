@@ -8,6 +8,8 @@ export interface Category {
   type: ContentType;
 }
 
+export type VisibilityTarget = "content" | "news";
+
 export interface ContentItem {
   id: string;
   platform: Platform;
@@ -16,6 +18,8 @@ export interface ContentItem {
   publishedAt?: string;
   excerpt?: string;
   thumbnail?: string;
+  newsText?: string;
+  visibility?: VisibilityTarget[];
   tags: string[];
   category: Category;
   source: "auto" | "manual";

@@ -35,6 +35,7 @@ interface Props {
 export default function Header({ links }: Props) {
   return (
     <header
+      className="site-header"
       style={{
         height: 62,
         backgroundColor: "#ffffff",
@@ -42,10 +43,10 @@ export default function Header({ links }: Props) {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "0 40px",
         position: "sticky",
         top: 0,
         zIndex: 100,
+        gap: 12,
       }}
     >
       <a
@@ -59,6 +60,7 @@ export default function Header({ links }: Props) {
           display: "flex",
           alignItems: "center",
           gap: 6,
+          flexShrink: 0,
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -66,7 +68,10 @@ export default function Header({ links }: Props) {
         ねこエンジニア
       </a>
 
-      <nav style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+      <nav
+        className="header-nav"
+        style={{ display: "flex", gap: 6, overflowX: "auto", scrollbarWidth: "none" }}
+      >
         {navLinks.map(({ key, label, bg, color }) => (
           <a
             key={key}
@@ -74,19 +79,21 @@ export default function Header({ links }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              padding: "5px 12px",
+              padding: "5px 10px",
               borderRadius: 20,
               fontSize: 11,
               fontWeight: 600,
               backgroundColor: bg,
               color,
               textDecoration: "none",
+              flexShrink: 0,
             }}
           >
             {label}
           </a>
         ))}
       </nav>
+
     </header>
   );
 }

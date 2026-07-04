@@ -14,12 +14,13 @@ interface Props {
 export default function Hero({ profile }: Props) {
   return (
     <section
+      className="hero-section"
       style={{
         background: "linear-gradient(140deg, #d4f4ee 0%, #e8fffe 55%, #f4fffd 100%)",
-        padding: "52px 40px 56px",
       }}
     >
       <div
+        className="hero-inner"
         style={{
           maxWidth: 900,
           margin: "0 auto",
@@ -48,10 +49,10 @@ export default function Hero({ profile }: Props) {
 
           {/* H1 */}
           <h1
+            className="hero-headline"
             style={{
               fontFamily: "var(--font-rounded), sans-serif",
               fontWeight: 800,
-              fontSize: 36,
               color: "#0d1f2d",
               lineHeight: 1.4,
               letterSpacing: "-0.01em",
@@ -146,6 +147,7 @@ export default function Hero({ profile }: Props) {
 
         {/* 右カラム（アバター） */}
         <div
+          className="hero-avatar"
           style={{
             flexShrink: 0,
             display: "flex",
@@ -184,6 +186,7 @@ export default function Hero({ profile }: Props) {
           </p>
         </div>
       </div>
+
     </section>
   );
 }
