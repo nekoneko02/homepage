@@ -477,6 +477,30 @@
     }
   },
   {
+    "id": "github-zeromath-ch02",
+    "platform": "github",
+    "title": "2章 まずはZFC公理を知る",
+    "url": "https://zeromath.neko-engineer.com/ch02.html",
+    "publishedAt": "2026-07-19",
+    "excerpt": "小学校数学の出発点となるZFC公理を紹介する章です。集合宇宙という本書の前提を明らかにしたうえで、外延性公理から選択公理までの一覧とその意味を説明します。章末コラム「集合宇宙は集合ではない」も収録しています。",
+    "newsText": "2章「まずはZFC公理を知る」を公開しました！\nZFC公理の一覧とその意味を、集合宇宙という前提の説明から丁寧に解説しています。章末コラム「集合宇宙は集合ではない」もぜひご覧ください。",
+    "visibility": [
+      "news"
+    ],
+    "tags": [
+      "数学",
+      "ZFC公理",
+      "本"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "数学",
+        "本"
+      ]
+    }
+  },
+  {
     "id": "github-zeromath-introduction",
     "platform": "github",
     "title": "ゼロから小学校数学 ― ZFC公理からすべてを証明し直す",
