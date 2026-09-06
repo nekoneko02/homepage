@@ -477,10 +477,58 @@
     }
   },
   {
+    "id": "github-zeromath-ch03",
+    "platform": "github",
+    "title": "3章 3までの自然数を構成する",
+    "url": "https://zeromath.neko-engineer.com/ch03.html",
+    "publishedAt": "2026-08-02",
+    "excerpt": "ZFC公理を使って0から3までの自然数を集合として構成し、有限個の数の範囲で足し算を定義する章です。「次の数」というアイデアを導入し、次章で無限個の自然数を扱うための布石とします。補題「3つの集合と対の公理」も収録しています。",
+    "newsText": "3章「3までの自然数を構成する」を公開しました！\n空集合の公理・対の公理・和集合の公理を使って0から3までの自然数を集合として構成し、足し算を定義しています。「次の数」というアイデアで、次章の無限の自然数へとつなげていきます。",
+    "visibility": [
+      "news"
+    ],
+    "tags": [
+      "数学",
+      "自然数",
+      "本"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "数学",
+        "本"
+      ]
+    }
+  },
+  {
+    "id": "github-zeromath-ch02",
+    "platform": "github",
+    "title": "2章 まずはZFC公理を知る",
+    "url": "https://zeromath.neko-engineer.com/ch02.html",
+    "publishedAt": "2026-07-19",
+    "excerpt": "小学校数学の出発点となるZFC公理を紹介する章です。集合宇宙という本書の前提を明らかにしたうえで、外延性公理から選択公理までの一覧とその意味を説明します。章末コラム「集合宇宙は集合ではない」も収録しています。",
+    "newsText": "2章「まずはZFC公理を知る」を公開しました！\nZFC公理の一覧とその意味を、集合宇宙という前提の説明から丁寧に解説しています。章末コラム「集合宇宙は集合ではない」もぜひご覧ください。",
+    "visibility": [
+      "news"
+    ],
+    "tags": [
+      "数学",
+      "ZFC公理",
+      "本"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "数学",
+        "本"
+      ]
+    }
+  },
+  {
     "id": "github-zeromath-introduction",
     "platform": "github",
     "title": "ゼロから小学校数学 ― ZFC公理からすべてを証明し直す",
-    "url": "https://github.com/nekoneko02/zeromath#%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E5%B0%8F%E5%AD%A6%E6%A0%A1%E6%95%B0%E5%AD%A6--zfc%E5%85%AC%E7%90%86%E3%81%8B%E3%82%89%E3%81%99%E3%81%B9%E3%81%A6%E3%82%92%E8%A8%BC%E6%98%8E%E3%81%97%E7%9B%B4%E3%81%99",
+    "url": "https://zeromath.neko-engineer.com/",
     "publishedAt": "2026-06-27",
     "excerpt": "小学校で習った算数を、あなたは本当に\"理解\"していますか？小学校算数ではなく、小学校\"数学\"として、より厳密に、一から理論を積み上げていくことを目的として、ZFC公理を出発点にゼロから考え直していく本です。",
     "newsText": "新しい本を公開しました！\nZFC公理を出発点に、ゼロから小学校算数を考え直す本です。現在1章まで公開中です！",

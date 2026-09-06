@@ -55,6 +55,179 @@ a {
   }
 }
 
+/* Gishohaku landing */
+.gishohaku-hero { padding: 40px 40px; }
+.gishohaku-title { font-size: 26px; }
+
+/* Gishohaku: 無料版サンプル本文
+ * content-cache/gishohaku-sample.html（scripts/build-gishohaku-sample.mjsで生成）を
+ * dangerouslySetInnerHTMLで流し込んだ領域のスタイル。 */
+.gishohaku-sample {
+  background: #ffffff;
+  border-top: 1px solid #e4efed;
+  padding: 48px 40px 64px;
+}
+.gishohaku-sample-inner { max-width: 640px; margin: 0 auto; }
+.gishohaku-sample-heading {
+  font-family: var(--font-rounded), sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #0d1f2d;
+  margin-bottom: 6px;
+}
+.gishohaku-sample-note {
+  font-size: 12px;
+  color: #7a909a;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.gishohaku-sample-content {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #2c3e46;
+  counter-reset: gishohaku-chapter;
+}
+.gishohaku-sample-content section.level1 { margin-bottom: 40px; }
+.gishohaku-sample-content section.level2 { margin: 28px 0; }
+/* 章・節番号。原稿側の{.no-count}（はじめに・序章・付録など）は対象外にする。
+ * 印刷版のvivliostyle独自カウンター（section_numbering.css）は再利用できないため、
+ * 同じ.no-countクラスを目印にWeb版だけの単純なCSSカウンターで表示している。 */
+.gishohaku-sample-content h1:not(.no-count) { counter-increment: gishohaku-chapter; counter-reset: gishohaku-section; }
+.gishohaku-sample-content h1:not(.no-count)::before { content: "第" counter(gishohaku-chapter) "章　"; }
+.gishohaku-sample-content h2:not(.no-count) { counter-increment: gishohaku-section; }
+.gishohaku-sample-content h2:not(.no-count)::before { content: counter(gishohaku-chapter) "." counter(gishohaku-section) "節　"; }
+.gishohaku-sample-content h1 {
+  font-family: var(--font-rounded), sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0d1f2d;
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0fa89b;
+}
+.gishohaku-sample-content h2 {
+  font-family: var(--font-rounded), sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0c8a80;
+  margin: 0 0 14px;
+}
+.gishohaku-sample-content p { margin: 0 0 16px; }
+.gishohaku-sample-content ul,
+.gishohaku-sample-content ol { margin: 0 0 16px; padding-left: 1.4em; }
+/* Tailwindのpreflightがul/olのlist-styleを全ページ共通でnoneにしているため、
+ * 本文中の箇条書きはここで明示的に復元する（サイト全体には影響させない）。 */
+.gishohaku-sample-content ul { list-style: disc; }
+.gishohaku-sample-content ol { list-style: decimal; }
+.gishohaku-sample-content li { margin-bottom: 6px; }
+.gishohaku-sample-content strong { color: #0d1f2d; }
+.gishohaku-sample-content blockquote {
+  margin: 20px 0;
+  padding: 12px 16px;
+  border-left: 3px solid #0fa89b;
+  background: #f4f9f8;
+  color: #4e6570;
+  font-size: 14px;
+}
+.gishohaku-sample-content figure { margin: 24px 0; text-align: center; }
+/* 画像は読み物の主役ではないので、実寸に関わらず表示上限を固定して控えめに見せる。
+ * width/max-widthを両方pxで固定し、画面幅がそれより狭い場合だけ100%に縮む。 */
+.gishohaku-sample-content img {
+  display: inline-block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #e4efed;
+}
+.gishohaku-sample-content figcaption { font-size: 12px; color: #4e6570; margin-top: 8px; }
+
+.gishohaku-sample-content .emphasize,
+.gishohaku-sample-content .column {
+  margin: 24px 0;
+  padding: 16px 18px;
+  border-radius: 8px;
+}
+.gishohaku-sample-content .emphasize { border: 2px solid #d4dde0; background: #f4f9f8; }
+.gishohaku-sample-content .column { border: 1px solid #e4efed; background: #fafcfb; }
+.gishohaku-sample-content .center-text,
+.gishohaku-sample-content .center-text p { text-align: center; }
+
+.gishohaku-sample-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.gishohaku-sample-content th,
+.gishohaku-sample-content td {
+  border: 1px solid #d4dde0;
+  padding: 8px 10px;
+  text-align: left;
+}
+.gishohaku-sample-content th { background: #f4f9f8; font-weight: 700; }
+
+/* 「以下は有料版に収録」案内（sample_note_before_appendix.html） */
+.gishohaku-sample-content .sample-skip-notice {
+  margin: 40px 0;
+  padding: 24px;
+  border-radius: 10px;
+  background: #fff7ed;
+  border: 1px dashed #f0b160;
+  text-align: center;
+}
+.gishohaku-sample-content .sample-skip-notice-text {
+  font-size: 13px;
+  color: #7a5218;
+  line-height: 1.8;
+  margin: 0 0 10px;
+}
+.gishohaku-sample-content .sample-continue-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+  font-size: 13px;
+  color: #7a5218;
+}
+.gishohaku-sample-content .sample-continue-list li { margin-bottom: 6px; }
+.gishohaku-sample-content .sample-continue-list span {
+  display: inline-block;
+  min-width: 3em;
+  font-weight: 700;
+  color: #c2410c;
+}
+
+/* 「続きはBoothで」（sample_continue.html） */
+.gishohaku-sample-content .sample-continue {
+  margin: 48px 0 0;
+  padding: 32px 20px 0;
+  text-align: center;
+  border-top: 1px solid #e4efed;
+}
+.gishohaku-sample-content .sample-continue-rule { display: none; }
+.gishohaku-sample-content .sample-continue-lead { font-size: 12px; color: #7a909a; margin: 0 0 6px; }
+.gishohaku-sample-content .sample-continue-title {
+  font-family: var(--font-rounded), sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #0d1f2d;
+  margin: 0 0 18px;
+}
+.gishohaku-sample-content .sample-continue-cta a {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  background: #0fa89b;
+  color: white;
+  text-decoration: none;
+}
+
 @media (max-width: 639px) {
   .site-header { padding: 0 16px; }
 
@@ -82,4 +255,15 @@ a {
   }
 
   .site-footer { padding: 20px 16px; }
+
+  .gishohaku-hero { padding: 32px 16px; min-height: auto !important; }
+  .gishohaku-inner {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 24px !important;
+  }
+  .gishohaku-cover { width: 160px !important; }
+  .gishohaku-title { font-size: 21px !important; }
+  .gishohaku-cta { justify-content: center !important; }
+  .gishohaku-sample { padding: 36px 16px 48px; }
 }

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "build:gishohaku-sample": "node scripts/build-gishohaku-sample.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
@@ -20,8 +21,10 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@vivliostyle/vfm": "^2.6.0",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.0",
+    "sharp": "^0.35.4",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.6.2",
     "vitest": "^4.1.9"
