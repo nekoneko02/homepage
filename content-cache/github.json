@@ -477,6 +477,32 @@
     }
   },
   {
+    "id": "github-zenn-book-zeroauth-book-20260802",
+    "platform": "zenn",
+    "title": "ゼロから設計するOAuth",
+    "url": "https://zenn.dev/neko_student/books/zeroauth-book",
+    "publishedAt": "2026-08-02T00:00:00.000Z",
+    "newsText": "「ゼロから設計するOAuth」の構成を大幅に見直しました。\n要件定義→設計→脅威モデリング→リスク対応、という流れで再構成し、1章「要求整理」を公開しました。",
+    "visibility": [
+      "news"
+    ],
+    "tags": [
+      "OAuth",
+      "セキュリティ",
+      "設計",
+      "book"
+    ],
+    "source": "auto",
+    "category": {
+      "domain": [
+        "IT",
+        "ブログ",
+        "本"
+      ],
+      "series": "ゼロから"
+    }
+  },
+  {
     "id": "github-zeromath-ch03",
     "platform": "github",
     "title": "3章 3までの自然数を構成する",
