@@ -3,6 +3,7 @@ import path from "path";
 import type { Metadata } from "next";
 import booth from "@/data/booth.json";
 import { profile } from "@/data/profile";
+import GishohakuBookTabs, { type GishohakuBookTab } from "./GishohakuBookTabs";
 
 interface BoothEntry {
   title: string;
@@ -30,6 +31,96 @@ const sampleHtml = fs.readFileSync(
   path.join(process.cwd(), "content-cache", "gishohaku-sample.html"),
   "utf-8"
 );
+
+// 「マイナス×マイナス、何通りにわかる？」（制作中の数学本）の本文。
+// 序章〜2章まで執筆済みの現時点の原稿を掲載している（企画は
+// engineers-core-book/docs/zeromath/00-企画.md を参照）。
+const zeromathSampleHtml = fs.readFileSync(
+  path.join(process.cwd(), "content-cache", "gishohaku-sample-zeromath.html"),
+  "utf-8"
+);
+
+const ZEROAUTH_BOOK_URL = "https://zenn.dev/neko_student/books/zeroauth-book";
+
+const sampleTabs: GishohakuBookTab[] = [
+  {
+    id: "career",
+    label: "📘 自分の軸駆動個人開発",
+    note: (
+      <>
+        立ち読み感覚でどうぞ。序章〜2章＋付録の一部を掲載しています。
+        <br />
+        <a
+          href={FREE_SAMPLE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#0fa89b", fontWeight: 600, textDecoration: "underline" }}
+        >
+          Boothから無料版PDFのダウンロードも可能です
+        </a>
+      </>
+    ),
+    sampleHtml,
+  },
+  {
+    id: "zeromath",
+    label: "🔢 マイナス×マイナス、何通りにわかる？（制作中）",
+    note: (
+      <>
+        「マイナス×マイナス、何通りにわかる？」——数学は得意だけど好きじゃない人に向けて、
+        1つの疑問を複数の視点（直感＋証明）で捉え直していく本です。現在執筆中で、
+        序章〜2章までの原稿を先行掲載しています。公開時期はホームページ・Twitterでお知らせします。
+      </>
+    ),
+    extra: (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src="/gishohaku/zeromath/cover.webp"
+        alt="マイナス×マイナス、何通りにわかる？ー視点を増やせば増やすほど、数学は楽しくなる"
+        style={{
+          width: 280,
+          maxWidth: "100%",
+          borderRadius: 8,
+          border: "1px solid #e4efed",
+          display: "block",
+          margin: "0 0 20px",
+        }}
+      />
+    ),
+    sampleHtml: zeromathSampleHtml,
+  },
+  {
+    id: "zeroauth",
+    label: "🔐 ゼロから設計するOAuth（制作中）",
+    note: (
+      <>
+        「なぜAuthorization Codeとaccess tokenを分けるの？」——セキュリティ面も気にしながら、
+        ゼロからOAuthを設計し直していく本です。Zennで執筆中の内容を無料公開しています。
+      </>
+    ),
+    extra: (
+      <div style={{ margin: "8px 0 12px" }}>
+        <a
+          href={ZEROAUTH_BOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            padding: "12px 28px",
+            borderRadius: 24,
+            fontSize: 14,
+            fontWeight: 700,
+            backgroundColor: "#0fa89b",
+            color: "white",
+            textDecoration: "none",
+          }}
+        >
+          📖 Zennで読む
+        </a>
+      </div>
+    ),
+  },
+];
 
 export const metadata: Metadata = {
   title: "技書博限定ページ | ねこエンジニア",
@@ -195,22 +286,7 @@ export default function GishohakuPage() {
       <section id="sample" className="gishohaku-sample">
         <div className="gishohaku-sample-inner">
           <h2 className="gishohaku-sample-heading">無料版を今すぐ読む</h2>
-          <p className="gishohaku-sample-note">
-            立ち読み感覚でどうぞ。序章〜2章＋付録の一部を掲載しています。
-            <br />
-            <a
-              href={FREE_SAMPLE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#0fa89b", fontWeight: 600, textDecoration: "underline" }}
-            >
-              Boothから無料版PDFのダウンロードも可能です
-            </a>
-          </p>
-          <div
-            className="gishohaku-sample-content"
-            dangerouslySetInnerHTML={{ __html: sampleHtml }}
-          />
+          <GishohakuBookTabs tabs={sampleTabs} />
         </div>
       </section>
 

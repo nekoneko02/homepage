@@ -171,6 +171,34 @@ a {
 }
 .gishohaku-sample-content th { background: #f4f9f8; font-weight: 700; }
 
+/* 数式（zeromath本）
+ * .math.inline / .math.display は preface向け。@vivliostyle/vfm がMathJaxのTeX
+ * デリミタで出力し、GishohakuBookTabs.tsx がクライアント側でMathJaxを読み込んで描画する。
+ * .mathtext / .mathtext-display は本文中（part01/part02）の四則演算の簡易表記。
+ * engineers-core-book/books/zeromath/styles/custom.css の指定を踏襲。 */
+.gishohaku-sample-content .math.display {
+  display: block;
+  margin: 20px 0;
+  text-align: center;
+}
+/* TailwindのpreflightがSVGを一律 display:block にしているため、MathJaxの
+ * インライン数式（span.math.inline > mjx-container > svg）がblock-in-inline化し、
+ * 前後のテキストが強制改行されてしまう（分数などタテに高いSVGで特に目立つ）。
+ * 数式部分のsvgだけinlineに戻す。display数式（$$...$$）はそもそも独立した行なので対象外。 */
+.gishohaku-sample-content .math.inline svg {
+  display: inline;
+}
+.gishohaku-sample-content .mathtext {
+  font-family: var(--font-kalam), var(--font-noto), sans-serif;
+}
+.gishohaku-sample-content .mathtext-display {
+  display: block;
+  margin: 20px 0;
+  text-align: center;
+  font-family: var(--font-kalam), var(--font-noto), sans-serif;
+  font-size: 1.2em;
+}
+
 /* 「以下は有料版に収録」案内（sample_note_before_appendix.html） */
 .gishohaku-sample-content .sample-skip-notice {
   margin: 40px 0;

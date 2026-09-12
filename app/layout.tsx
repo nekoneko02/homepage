@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { M_PLUS_Rounded_1c, Noto_Sans_JP } from "next/font/google";
+import { Kalam, M_PLUS_Rounded_1c, Noto_Sans_JP } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -14,6 +14,15 @@ const notoSansJP = Noto_Sans_JP({
   weight: ["400", "500", "600"],
   subsets: ["latin"],
   variable: "--font-noto",
+  display: "swap",
+});
+
+// /gishohaku の数学本サンプル本文（.mathtext）で使用。手書き風の数式表記用
+// （engineers-core-book/books/zeromath/styles/custom.css の指定を踏襲）。
+const kalam = Kalam({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-kalam",
   display: "swap",
 });
 
@@ -48,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${mPlusRounded.variable} ${notoSansJP.variable}`}
+      className={`${mPlusRounded.variable} ${notoSansJP.variable} ${kalam.variable}`}
     >
       <body style={{ fontFamily: "var(--font-noto), sans-serif" }}>
         {children}
